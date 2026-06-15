@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    /*background: linear-gradient(180deg, #cddd1b 6.73%, #e1f482 14.45%, #f9ffdb 24.27%, #fcf2d6 31.45%, #fdd8bc 44.86%, #fdccc2 49.16%, #fdc7c4 53.37%, #fefff9 70.67%, #ffe1e5 84.13%, #fdd1cf 88.98%, #feb5b2 100%);*/
+}
+
+@font-face {
+    font-family: 'Euclid Circular A';
+    src: url('../assets/fonts/Euclid Circular A SemiBold.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Euclid Circular A';
+    src: url('../assets/fonts/Euclid Circular A Bold.ttf') format('ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+:root {
+    --light-beige: #fdf3d8;
+    --orange-beige: #fde9bf;
+    --mango-yellow: #ffd702;
+    --banana-yellow: #ffe96d;
+    --green-bright: #d0e7b3;
+    --mint-green: #a4dca6;
+    --peach: #ffd6a9;
+    --light-pink: #ffc4c7;
+    --white: #fff;
+    --dark-green: #657608;
+    --card3: rgba(253, 206, 180, 0.66);
+    --incridients: rgba(253, 206, 180, 0.66);
+    --dark-blue: #002e6d;
+}
