@@ -1,0 +1,45 @@
+.siesta {
+    padding: 107px 0;
+}
+
+.siesta-wrapper {
+    display: flex;
+    gap: 124px;
+    justify-content: center;
+    align-items: center;
+}
+
+.siesta-title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 106%;
+    text-align: center;
+    color: #dc3755;
+}
+
+.siesta-desc {
+    margin-top: 28px;
+    max-width: 387px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 114%;
+    text-align: center;
+    color: var(--dark-blue);
+}
+
+.siesta-btn {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.siesta-btn p {
+    max-width: 130px;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 114%;
+    text-align: center;
+    color: var(--dark-blue);
+}

@@ -1,0 +1,89 @@
+/* === Слайдер === */
+.classic-slider-flavors {
+    position: relative;
+    padding: 118px 112px 93px;
+    max-width: 1172px;
+    margin: 0 auto;
+}
+
+.classic-slider-flavors__viewport {
+    overflow: hidden;
+}
+
+.classic-slider-flavors__track {
+    display: flex;
+    gap: 28px;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+/* Карточка вкуса. flex-basis вычисляется через CSS-переменную --per-view */
+.classic-slider-flavor {
+    /* ширина одной карточки = (100% - суммарные гэпы) / кол-во видимых */
+    flex: 0 0 calc((100% - (var(--per-view) - 1) * 28px) / var(--per-view));
+    min-width: 0;
+    text-align: center;
+}
+
+.classic-slider-flavor__image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.classic-slider-flavor__name {
+    margin-top: 16px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 110%;
+    text-align: center;
+    color: var(--dark-blue);
+}
+
+.classic-slider-flavor__btn {
+    margin: 28px auto 25px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 114%;
+    color: #1b4332;
+    display: flex;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 100px;
+    width: 262px;
+    height: 64px;
+    backdrop-filter: blur(20px);
+    box-shadow: inset 0 1px 6px 0 rgba(255, 255, 255, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.1) linear-gradient(180deg, rgba(253, 89, 2, 0.15) 0%, rgba(67, 115, 46, 0.15) 100%);
+    align-items: center;
+    justify-content: center;
+}
+
+/* Стрелки */
+.classic-slider-flavors__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 104px;
+    height: 104px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    z-index: 2;
+}
+
+
+
+.classic-slider-flavors__btn--prev {
+    left: 0;
+}
+
+.classic-slider-flavors__btn--next {
+    right: 0;
+}
+
