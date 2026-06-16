@@ -1,0 +1,23 @@
+.recipes {
+    padding: 74px 0 122px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.recipes-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+    justify-content: center;
+    margin-bottom: 63px;
+}
+
+.recipes-title {
+    font-weight: 500;
+    font-size: 61px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--dark-blue);
+}

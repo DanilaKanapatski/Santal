@@ -1,0 +1,156 @@
+.drinks-title {
+    padding: 38px 0;
+    margin: 0 auto;
+    max-width: 469px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 106%;
+    background: radial-gradient(50.00% 50.00% at 50.00%  50.00%, rgb(25, 93, 187) 0%, rgb(7, 91, 206) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* Обёртка слайдера */
+.drinks-slider {
+    position: relative;
+    max-width: 1078px;
+    margin: 0 auto;
+}
+
+/* Окно слайдера — скрывает всё, что выходит за границы */
+.drinks-slider__viewport {
+    overflow: hidden;
+    transition: height 0.4s ease;  /* ← ДОБАВИТЬ */
+}
+
+/* Лента слайдов — двигается через transform */
+.drinks-slider__track {
+    display: flex;
+    align-items: flex-start;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+/* Один слайд */
+.drinks-slide {
+    flex: 0 0 100%;          /* каждый слайд занимает 100% ширины окна */
+    min-width: 0;
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+}
+
+.drinks-slide__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.drinks-slide__content {
+    margin-top: 103px;
+    max-width: 356px;
+}
+
+.drinks-slide__content-title {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 110%;
+    color: var(--dark-blue);
+}
+
+.drinks-slide__content-subtitle {
+    margin-top: 22px;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 114%;
+    color: var(--dark-blue);
+}
+
+.drinks-slide__content-list {
+    margin-top: 19px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.drinks-slide__content-list li {
+    padding-left: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 114%;
+    color: var(--dark-blue);
+    position: relative;
+}
+
+.drinks-slide__content-list li::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--dark-green);
+    border-radius: 100%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.drinks-slide__content-desc {
+    margin-top: 12px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 114%;
+    color: var(--dark-blue);
+}
+
+.drinks-slide__content-ready {
+    margin-top: 10px;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 114%;
+    color: var(--dark-blue);
+}
+
+/* Кнопки навигации */
+.drinks-slider__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    background: radial-gradient(180deg, #fdce02 0%, rgba(67, 115, 46, 0) 100%), rgba(255, 255, 255, 0.1) ;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-blend-mode: overlay; /* или overlay, смотри что ближе */
+    backdrop-filter: blur(20px);
+    box-shadow: inset 0 1px 6px 0 rgba(255, 255, 255, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    z-index: 2;
+}
+
+.drinks-slider__btn:hover {
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.drinks-slider__btn:active {
+    transform: translateY(-50%) scale(0.98);
+}
+
+.drinks-slider__btn--prev { left: 0; }
+.drinks-slider__btn--next { right: 0; }
+
+/* Счётчик */
+.drinks-slider__counter {
+    margin-top: 77px;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 114%;
+    text-align: center;
+    color: var(--dark-blue);
+}

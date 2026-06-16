@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/recipes.css">
+    <link rel="stylesheet" href="css/drinks.css">
     <link rel="stylesheet" href="css/playlist.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +18,398 @@
 <body>
 <header></header>
 <main>
+    <section class="recipes">
+        <div class="recipes-wrapper">
+            <svg width="303" height="2" viewBox="0 0 303 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M302 1H1" stroke="#002E6D" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <h2 class="recipes-title">Рецепты</h2>
+            <svg width="303" height="2" viewBox="0 0 303 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M302 1H1" stroke="#002E6D" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </div>
+        <img src="assets/images/recipes-1.png" alt="">
+    </section>
+    <section class="drinks">
+        <h2 class="drinks-title">Напитки на основе соков Santal</h2>
+        <div class="drinks-slider" id="drinks-slider">
+            <button class="drinks-slider__btn drinks-slider__btn--prev" id="drinks-prevBtn" aria-label="Назад">
+                <svg width="28" height="21" viewBox="0 0 28 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.261011 9.89546C0.195758 9.95909 0.0652526 10.0864 0.0652526 10.2136C-2.20054e-07 10.3409 -4.6036e-07 10.4682 -4.57579e-07 10.5318C-4.54797e-07 10.5955 -2.00583e-07 10.7864 0.0652527 10.85C0.130506 10.9773 0.195758 11.1045 0.261011 11.1682L10.0489 20.7136C10.4405 21.0955 11.0277 21.0955 11.4193 20.7136C11.8108 20.3318 11.8108 19.7591 11.4193 19.3773L3.3279 11.4864L26.2291 11.4864C26.7511 11.4864 27.2079 11.0409 27.2079 10.5318C27.2079 10.0227 26.7511 9.57727 26.2291 9.57727L3.3279 9.57727L11.4193 1.68636C11.615 1.49546 11.6803 1.24091 11.6803 0.986366C11.6803 0.731821 11.615 0.477273 11.4193 0.286365C11.0277 -0.0954537 10.4405 -0.0954537 10.0489 0.286365L0.261011 9.89546Z" fill="#1B4332"/>
+                </svg>
+            </button>
+
+            <div class="drinks-slider__viewport">
+                <div class="drinks-slider__track" id="drinks-track">
+
+                    <!-- СЛАЙД 1 -->
+                    <div class="drinks-slide">
+                        <div class="drinks-slide__image">
+                            <img src="assets/images/drinks-1.png" alt="">
+                        </div>
+                        <div class="drinks-slide__content">
+                            <h2 class="drinks-slide__content-title">Банана — Колада</h2>
+                            <h3 class="drinks-slide__content-subtitle">Ингредиенты:</h3>
+                            <ul class="drinks-slide__content-list">
+                                <li>Нектар Santal банановый — 150 мл</li>
+                                <li>Кокосовые сливки — 80 мл</li>
+                                <li>Ананас — 100 г</li>
+                                <li>Лёд — 150 г</li>
+                            </ul>
+                            <h3 class="drinks-slide__content-subtitle">Метод приготовления:</h3>
+                            <p class="drinks-slide__content-desc">Чашу блендера наполнить всеми ингредиентами, взбить до однородной консистенции. Получившийся напиток</p>
+                            <p class="drinks-slide__content-ready">Напиток готов, можно наслаждаться!</p>
+                        </div>
+                    </div>
+                    <div class="drinks-slide">
+                        <div class="drinks-slide__image">
+                            <img src="assets/images/drinks-2.png" alt="">
+                        </div>
+                        <div class="drinks-slide__content">
+                            <h2 class="drinks-slide__content-title">Матча - бамбл</h2>
+                            <h3 class="drinks-slide__content-subtitle">Ингредиенты:</h3>
+                            <ul class="drinks-slide__content-list">
+                                <li>Сок Santal Апельсиновый - 200 мл</li>
+                                <li>Карамельный топпинг - 30 мл</li>
+                                <li>Матча - 2 г</li>
+                                <li>Матча - 2 г</li>
+                            </ul>
+                            <h3 class="drinks-slide__content-subtitle">Метод приготовления:</h3>
+                            <p class="drinks-slide__content-desc">В 50 мл горячей воды заварить матчу и охладить ее. Бокал наполнить льдом, добавить карамельный топпинг, сверху сок Santal апельсиновый. </p>
+                            <p class="drinks-slide__content-ready">Матча - бамбл готова, наслаждайтесь!</p>
+                        </div>
+                    </div>
+
+                    <div class="drinks-slide">
+                        <div class="drinks-slide__image">
+                            <img src="assets/images/drinks-3.png" alt="">
+                        </div>
+                        <div class="drinks-slide__content">
+                            <h2 class="drinks-slide__content-title">Лимонад с Ананасовым соком</h2>
+                            <h3 class="drinks-slide__content-subtitle">Ингредиенты:</h3>
+                            <ul class="drinks-slide__content-list">
+                                <li>Сок Santal Ананасовый - 150 мл</li>
+                                <li>Минеральная вода - 50 мл</li>
+                                <li>Клубника - 30 г</li>
+                                <li>Клубничный сироп - 10 мл</li>
+                                <li>Лемонграсс - 20 г</li>
+                                <li>Цветы жасмина - 2 г</li>
+                                <li>Лед - 100 г</li>
+                            </ul>
+                            <h3 class="drinks-slide__content-subtitle">Метод приготовления:</h3>
+                            <p class="drinks-slide__content-desc">Заранее заварить мелко нарезанный лемонграсс и цветы жасмина в 50 мл горячей воды в течении 10 минут, охладить. В бокал налить сироп клубничный. Наполнить бокал льдом. Перелить заваренный чай (можно не процеживать). Добавить сок Santal Ананасовый и минеральную воду. Украсить кружочками клубники. </p>
+                            <p class="drinks-slide__content-ready">Лимонад готов!</p>
+                        </div>
+                    </div>
+                    <div class="drinks-slide">
+                        <div class="drinks-slide__image">
+                            <img src="assets/images/drinks-4.png" alt="">
+                        </div>
+                        <div class="drinks-slide__content">
+                            <h2 class="drinks-slide__content-title">Смузи груша - малина</h2>
+                            <h3 class="drinks-slide__content-subtitle">Ингредиенты:</h3>
+                            <ul class="drinks-slide__content-list">
+                                <li>Нектар Santal грушевый - 150 мл</li>
+                                <li>Малина замороженная - 100 г</li>
+                                <li>Малина свежая - 2-3 шт (для украшения)</li>
+                                <li>Лед - 100 г</li>
+                            </ul>
+                            <h3 class="drinks-slide__content-subtitle">Метод приготовления:</h3>
+                            <p class="drinks-slide__content-desc">Чашу блендера наполнить всеми ингредиентами, взбить до однородной консистенции. Получившийся напиток перелить в бокал и украсить свежими ягодами малины. </p>
+                            <p class="drinks-slide__content-ready">Смузи готов, можно наслаждаться!</p>
+                        </div>
+                    </div>
+                    <div class="drinks-slide">
+                        <div class="drinks-slide__image">
+                            <img src="assets/images/drinks-5.png" alt="">
+                        </div>
+                        <div class="drinks-slide__content">
+                            <h2 class="drinks-slide__content-title">Яблочный холодный чай
+                                с тархуном</h2>
+                            <h3 class="drinks-slide__content-subtitle">Ингредиенты:</h3>
+                            <ul class="drinks-slide__content-list">
+                                <li>Сок Santal яблочный - 150 мл</li>
+                                <li>Лимонный фреш - 10 мл</li>
+                                <li>Чай жасмин - 3 г</li>
+                                <li>Тархун - 3 гр</li>
+                                <li>Яблоко - 0,5 шт</li>
+                                <li>Лед - 150 г</li>
+                            </ul>
+                            <h3 class="drinks-slide__content-subtitle">Метод приготовления:</h3>
+                            <p class="drinks-slide__content-desc">В 100 мл горячей воды заварить чай жасминовый с тархуном и охладить его. Бокал наполнить льдом, добавить сок Santal Яблочный, лимонный фреш, охлажденный чай и нарезанные дольки яблока. Украсить напиток веточкой тархуна. </p>
+                            <p class="drinks-slide__content-ready">Яблочный холодный чай с тархуном готов, можно наслаждаться!</p>
+                        </div>
+                    </div>
+                    <div class="drinks-slide">
+                        <div class="drinks-slide__image">
+                            <img src="assets/images/drinks-6.png" alt="">
+                        </div>
+                        <div class="drinks-slide__content">
+                            <h2 class="drinks-slide__content-title">Холодный чай лесные ягоды
+                                с лавандой</h2>
+                            <h3 class="drinks-slide__content-subtitle">Ингредиенты:</h3>
+                            <ul class="drinks-slide__content-list">
+                                <li>Напиток Santal лесные ягоды - 150 мл</li>
+                                <li>Лимонный фреш - 10 мл</li>
+                                <li>Черный чай - 3 г</li>
+                                <li>Лаванда - 1 г</li>
+                                <li>Мята - 2 г</li>
+                                <li>Замороженные ягоды - 10 г</li>
+                                <li>Лед - 150 г</li>
+                            </ul>
+                            <h3 class="drinks-slide__content-subtitle">Метод приготовления:</h3>
+                            <p class="drinks-slide__content-desc">В 80 мл горячей воды заварить черный чай с лавандой в течении 10 минут и охладить его. Бокал наполнить льдом, добавить напиток  Santal лесные ягоды, лимонный фреш, охлажденный процеженный чай и замороженные ягоды. Украсить напиток веточкой мяты.</p>
+                            <p class="drinks-slide__content-ready">Холодный чай лесные ягоды с лавандой готов, можно наслаждаться!</p>
+                        </div>
+                    </div>
+                    <div class="drinks-slide">
+                        <div class="drinks-slide__image">
+                            <img src="assets/images/drinks-7.png" alt="">
+                        </div>
+                        <div class="drinks-slide__content">
+                            <h2 class="drinks-slide__content-title">Вишневый лимонад</h2>
+                            <h3 class="drinks-slide__content-subtitle">Ингредиенты:</h3>
+                            <ul class="drinks-slide__content-list">
+                                <li>Напиток Santal Красная вишня - 150 мл</li>
+                                <li>Минеральная вода - 100 мл</li>
+                                <li>Сироп Ментол - 10 мл</li>
+                                <li>Вишня - 30 г</li>
+                                <li>Корица - 1 г</li>
+                                <li>Гвоздика - 1 г</li>
+                                <li>Мята - 3 г</li>
+                                <li>Лед - 170 г</li>
+                            </ul>
+                            <h3 class="drinks-slide__content-subtitle">Метод приготовления:</h3>
+                            <p class="drinks-slide__content-desc">В 30 мл горячей воды заварить корицу и гвоздику, дать настояться 10 минут, затем процедить. Наполнить бокал льдом. Добавить сироп ментол, листья мяты, процеженный отвар из специй, напиток Santal Красная вишня и минеральную воду.  Длинной ложкой перемешать содержимое бокала. Украсить резанными пополам ягодами вишни. </p>
+                            <p class="drinks-slide__content-ready">Лимонад готов - наслаждайтесь !</p>
+                        </div>
+                    </div>
+                    <div class="drinks-slide">
+                        <div class="drinks-slide__image">
+                            <img src="assets/images/drinks-8.png" alt="">
+                        </div>
+                        <div class="drinks-slide__content">
+                            <h2 class="drinks-slide__content-title">Холодный виноградный чай</h2>
+                            <h3 class="drinks-slide__content-subtitle">Ингредиенты:</h3>
+                            <ul class="drinks-slide__content-list">
+                                <li>Напиток Santal Красный виноград - 100 мл</li>
+                                <li>Лимонный фреш - 20 мл</li>
+                                <li>Лист бамбука - 1 шт</li>
+                                <li>Виноград - 30 г</li>
+                                <li>Лед - 150 г</li>
+                            </ul>
+                            <h3 class="drinks-slide__content-subtitle">Метод приготовления:</h3>
+                            <p class="drinks-slide__content-desc">В 100 мл горячей воды заварить чай жасминовый и охладить его. Бокал наполнить льдом, добавить напиток Santal Красный виноград, лимонный фреш, охлажденный чай и нарезанный пополам виноград. Украсить напиток листом бамбука. </p>
+                            <p class="drinks-slide__content-ready">Холодный виноградный чай готов, можно наслаждаться!</p>
+                        </div>
+                    </div>
+                    <div class="drinks-slide">
+                        <div class="drinks-slide__image">
+                            <img src="assets/images/drinks-9.png" alt="">
+                        </div>
+                        <div class="drinks-slide__content">
+                            <h2 class="drinks-slide__content-title">Смузи груша- малина</h2>
+                            <h3 class="drinks-slide__content-subtitle">Ингредиенты:</h3>
+                            <ul class="drinks-slide__content-list">
+                                <li>Сок Santal томатный - 150 мл</li>
+                                <li>Клубника замороженная - 100 г</li>
+                                <li>Красный базилик - 10 г</li>
+                                <li>Соль лимонная - 5 г</li>
+                                <li>Бальзамический соус - 5 г</li>
+                                <li>Лед - 50 г</li>
+                            </ul>
+                            <h3 class="drinks-slide__content-subtitle">Метод приготовления:</h3>
+                            <p class="drinks-slide__content-desc">Чашу блендера наполнить всеми ингредиентами, взбить до однородной консистенции. Получившийся напиток перелить в бокал , сверху добавить несколько капель бальзамического соуса c лимонной солью. </p>
+                            <p class="drinks-slide__content-ready">Смузи готов, можно наслаждаться!</p>
+                        </div>
+                    </div>
+                    <div class="drinks-slide">
+                        <div class="drinks-slide__image">
+                            <img src="assets/images/drinks-10.png" alt="">
+                        </div>
+                        <div class="drinks-slide__content">
+                            <h2 class="drinks-slide__content-title">Черешневый лимонад</h2>
+                            <h3 class="drinks-slide__content-subtitle">Ингредиенты:</h3>
+                            <ul class="drinks-slide__content-list">
+                                <li>Нектар Santal  Черешневый - 150 мл</li>
+                                <li>Минеральная вода - 100 мл</li>
+                                <li>Сироп Ванильный - 10 мл</li>
+                                <li>Апельсин - 100 г</li>
+                                <li>Корица - 1 г</li>
+                                <li>Кориандр - 1 г</li>
+                                <li>Лед - 170 г</li>
+                            </ul>
+                            <h3 class="drinks-slide__content-subtitle">Метод приготовления:</h3>
+                            <p class="drinks-slide__content-desc">В 30 мл горячей воды заварить корицу
+                                и кориандр, дать настояться 10 минут, затем процедить. Наполнить бокал льдом. Добавить ванильный сироп, процеженный отвар из специй, нектар Santal Черешневый, 50 мл фреша апельсинового и минеральную воду.  Длинной ложкой перемешать содержимое бокала. Украсить резанными пополам ягодами черешни и дольками апельсина. </p>
+                            <p class="drinks-slide__content-ready">Лимонад готов - наслаждайтесь!</p>
+                        </div>
+                    </div>
+                    <div class="drinks-slide">
+                        <div class="drinks-slide__image">
+                            <img src="assets/images/drinks-11.png" alt="">
+                        </div>
+                        <div class="drinks-slide__content">
+                            <h2 class="drinks-slide__content-title">Лимонад таежный</h2>
+                            <h3 class="drinks-slide__content-subtitle">Ингредиенты:</h3>
+                            <ul class="drinks-slide__content-list">
+                                <li>Напиток Santal Клюква - 150 мл</li>
+                                <li>Минеральная вода - 70 мл</li>
+                                <li>Ванильный сахар - 10 г</li>
+                                <li>Апельсин - 100 г</li>
+                                <li>Можжевельник - 3 г</li>
+                                <li>Розмарин - 5 г</li>
+                                <li>Клюква замороженная - 30 г</li>
+                                <li>Лед - 170 г</li>
+                            </ul>
+                            <h3 class="drinks-slide__content-subtitle">Метод приготовления:</h3>
+                            <p class="drinks-slide__content-desc">В 30 мл горячей воды заварить можжевельник, розмарин, ванильный сахар, дать настояться 10 минут, затем процедить. Наполнить бокал льдом. Добавить процеженный сироп из специй, напиток Santal клюква, 50 мл фреша апельсинового, сверху влить минеральную воду и добавить замороженные ягоды.  Длинной ложкой перемешать содержимое бокала. Украсить веточкой розмарина и долькой апельсина. </p>
+                            <p class="drinks-slide__content-ready">Таежный лимонад готов - наслаждайтесь!</p>
+                        </div>
+                    </div>
+                    <div class="drinks-slide">
+                        <div class="drinks-slide__image">
+                            <img src="assets/images/drinks-12.png" alt="">
+                        </div>
+                        <div class="drinks-slide__content">
+                            <h2 class="drinks-slide__content-title">Тропический мохито</h2>
+                            <h3 class="drinks-slide__content-subtitle">Ингредиенты:</h3>
+                            <ul class="drinks-slide__content-list">
+                                <li>Нектар мультифрукт Santal - 150 мл</li>
+                                <li>Минеральная вода - 100 мл</li>
+                                <li>Лайм - 30 г</li>
+                                <li>Мята - 5 г</li>
+                                <li>Лед - 170 г</li>
+                            </ul>
+                            <h3 class="drinks-slide__content-subtitle">Метод приготовления:</h3>
+                            <p class="drinks-slide__content-desc">В бокале размять дольки лайма и мяту. Наполнить бокал льдом. Добавить нектар мультифрукт Santal и минеральную воду. Длинной ложкой перемешать содержимое бокала. </p>
+                            <p class="drinks-slide__content-ready">Тропический мохито готов - наслаждайтесь!</p>
+                        </div>
+                    </div>
+                    <div class="drinks-slide">
+                        <div class="drinks-slide__image">
+                            <img src="assets/images/drinks-13.png" alt="">
+                        </div>
+                        <div class="drinks-slide__content">
+                            <h2 class="drinks-slide__content-title">Холодный апельсиновый
+                                чай с бабл - ти</h2>
+                            <h3 class="drinks-slide__content-subtitle">Ингредиенты:</h3>
+                            <ul class="drinks-slide__content-list">
+                                <li>Напиток сокосодержащий Santal
+                                    из апельсина- 100 мл</li>
+                                <li>Ромашка цветы - 3 г</li>
+                                <li>Бабл - ти фруктовые - 30 г</li>
+                                <li>Лед - 150 г</li>
+                            </ul>
+                            <h3 class="drinks-slide__content-subtitle">Метод приготовления:</h3>
+                            <p class="drinks-slide__content-desc">В 100 мл горячей воды заварить цветы ромашки и охладить его. В бокал добавить шарики бабл - ти. Далее наполнить льдом, добавить напиток сокосодержащий Santal
+                                из апельсина и охлажденный чай.</p>
+                            <p class="drinks-slide__content-ready">Холодный апельсиновый чай с бабл - ти готов, можно наслаждаться!</p>
+                        </div>
+                    </div>
+                    <div class="drinks-slide">
+                        <div class="drinks-slide__image">
+                            <img src="assets/images/drinks-14.png" alt="">
+                        </div>
+                        <div class="drinks-slide__content">
+                            <h2 class="drinks-slide__content-title">Лимонад грейпфрут - базилик</h2>
+                            <h3 class="drinks-slide__content-subtitle">Ингредиенты:</h3>
+                            <ul class="drinks-slide__content-list">
+                                <li>Напиток Santal Красный грейпфрут - 100 мл</li>
+                                <li>Минеральная вода - 100 мл</li>
+                                <li>Красный базилик - 20 г</li>
+                                <li>Сахар - 20 г</li>
+                                <li>Лимон - 30 г</li>
+                                <li>Лед - 170 г</li>
+                            </ul>
+                            <h3 class="drinks-slide__content-subtitle">Метод приготовления:</h3>
+                            <p class="drinks-slide__content-desc">Заранее заварить в 80 мл горячей воды красный базилик с сахаром, затем охладить этот настой и процедить. Бокал наполнить колотым льдом. Добавить напиток Santal Красный грейпфрут и фреш лимона 10 мл. Сверху влить настой из базилика, далее минеральную воду. Лимонад можно украсить листочком базилика. Перед употреблением перемешать трубочкой. </p>
+                            <p class="drinks-slide__content-ready">Лимонад грейпфрут - базилик готов, наслаждайтесь!</p>
+                        </div>
+                    </div>
+                    <div class="drinks-slide">
+                        <div class="drinks-slide__image">
+                            <img src="assets/images/drinks-15.png" alt="">
+                        </div>
+                        <div class="drinks-slide__content">
+                            <h2 class="drinks-slide__content-title">Холодный цикорий</h2>
+                            <h3 class="drinks-slide__content-subtitle">Ингредиенты:</h3>
+                            <ul class="drinks-slide__content-list">
+                                <li>Сок Santal Гранат - 200 мл</li>
+                                <li>Цикорий - 10 гг</li>
+                                <li>Тимьян - 3 г</li>
+                                <li>Мед - 20 г</li>
+                                <li>Красный перец - 1 г</li>
+                                <li>Лед - 150 г</li>
+                            </ul>
+                            <h3 class="drinks-slide__content-subtitle">Метод приготовления:</h3>
+                            <p class="drinks-slide__content-desc">В 50 мл горячей воды заварить цикорий, мед, красный перец, тимьян и охладить. Бокал наполнить льдом, добавить сок Santal гранат
+                                и заваренный процеженный цикорий. Напиток нужно перемешать длинной ложкой, можно украсить веточкой тимьяна. </p>
+                            <p class="drinks-slide__content-ready">Холодный цикорий готов, наслаждайтесь!</p>
+                        </div>
+                    </div>
+                    <div class="drinks-slide">
+                        <div class="drinks-slide__image">
+                            <img src="assets/images/drinks-16.png" alt="">
+                        </div>
+                        <div class="drinks-slide__content">
+                            <h2 class="drinks-slide__content-title">Безалкогольный
+                                апероль - шприц</h2>
+                            <h3 class="drinks-slide__content-subtitle">Ингредиенты:</h3>
+                            <ul class="drinks-slide__content-list">
+                                <li>Напиток Santal Красный
+                                    сицилийский апельсин - 150 мл</li>
+                                <li>Индиана тоник - 100 мл</li>
+                                <li>Лимонный фреш - 10 мл</li>
+                                <li>Можжевельник - 3 г</li>
+                                <li>Тимьян - 5 г</li>
+                                <li>Сахар - 15 г</li>
+                                <li>Красный апельсин - 10 г</li>
+                                <li>Лед - 170 г</li>
+                            </ul>
+                            <h3 class="drinks-slide__content-subtitle">Метод приготовления:</h3>
+                            <p class="drinks-slide__content-desc">В 30 мл горячей воды заварить можжевельник, тимьян и сахар, дать настояться 10 минут, затем процедить. Наполнить бокал льдом. Добавить процеженный сироп из специй, напиток Santal Красный сицилийский апельсин, 10 мл лимонного фреша и индиана тоник.  Длинной ложкой перемешать содержимое бокала. Украсить кружком апельсина.</p>
+                            <p class="drinks-slide__content-ready">Безалкогольный апероль - шприц готов - наслаждайтесь!</p>
+                        </div>
+                    </div>
+                    <div class="drinks-slide">
+                        <div class="drinks-slide__image">
+                            <img src="assets/images/drinks-17.png" alt="">
+                        </div>
+                        <div class="drinks-slide__content">
+                            <h2 class="drinks-slide__content-title">Лимонад манго - личи</h2>
+                            <h3 class="drinks-slide__content-subtitle">Ингредиенты:</h3>
+                            <ul class="drinks-slide__content-list">
+                                <li>Нектар Santal Манго - 100 мл</li>
+                                <li>Минеральная вода - 100 мл</li>
+                                <li>Личи консервированный с сиропом - 50 г</li>
+                                <li>Сироп сакура - 10 мл</li>
+                                <li>Лимон - 30 г</li>
+                                <li>Лед - 170 г</li>
+                            </ul>
+                            <h3 class="drinks-slide__content-subtitle">Метод приготовления:</h3>
+                            <p class="drinks-slide__content-desc">Бокал наполнить льдом. Добавить сироп сакура, половинки консервированных личи вместе с сиропом, далее нектар Santal Манго
+                                и фреш лимона 20 мл. Сверху долить минеральной водой и украсить долькой лимона. </p>
+                            <p class="drinks-slide__content-ready">Лимонад манго - личи готов, наслаждайтесь!</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <button class="drinks-slider__btn drinks-slider__btn--next" id="drinks-nextBtn" aria-label="Вперёд">
+                <svg width="28" height="21" viewBox="0 0 28 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M26.946 11.1045C27.0113 11.0409 27.1418 10.9136 27.1418 10.7864C27.207 10.6591 27.207 10.5318 27.207 10.4682C27.207 10.4045 27.207 10.2136 27.1418 10.15C27.0765 10.0227 27.0113 9.89545 26.946 9.83182L17.1581 0.286363C16.7666 -0.095455 16.1793 -0.095455 15.7878 0.286363C15.3963 0.668181 15.3963 1.24091 15.7878 1.62273L23.8791 9.51364L0.977966 9.51363C0.455944 9.51363 -0.000828225 9.95909 -0.000828247 10.4682C-0.000828269 10.9773 0.455944 11.4227 0.977966 11.4227L23.8791 11.4227L15.7878 19.3136C15.592 19.5045 15.5268 19.7591 15.5268 20.0136C15.5268 20.2682 15.592 20.5227 15.7878 20.7136C16.1793 21.0955 16.7666 21.0955 17.1581 20.7136L26.946 11.1045Z" fill="#1B4332"/>
+                </svg>
+            </button>
+
+            <div class="drinks-slider__counter">
+                <span id="current">1</span>/<span id="total">17</span>
+            </div>
+        </div>
+
+    </section>
     <section class="playlist">
         <h2 class="playlist-title">Плейлист Сантал</h2>
         <div class="playlist-about">
@@ -121,18 +515,110 @@
                 <a href="">слушать плейлист <img src="assets/images/play-1.svg" alt=""></a>
             </div>
         </div>
-        <div>
-            <div>
-                <p>1</p>
-                <div>
-                    <div>
-                        <img src="" alt="">
+        <div class="playlist-list">
+            <div class="playlist-track">
+                <p class="playlist-track-num">1</p>
+                <div class="playlist-track-wrapper">
+                    <div class="playlist-track-block">
+                        <div class="playlist-track-btn">
+                            <img src="assets/images/play-2.svg" alt="">
+                        </div>
+                        <div class="playlist-track-content">
+                            <h3 class="playlist-track-title">Банановый Джангл</h3>
+                            <p class="playlist-track-name">Santal</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3>Банановый Джангл</h3>
-                        <p>Santal</p>
+                    <p class="playlist-track-time">02:34</p>
+                </div>
+            </div>
+            <div class="playlist-track">
+                <p class="playlist-track-num">2</p>
+                <div class="playlist-track-wrapper">
+                    <div class="playlist-track-block">
+                        <div class="playlist-track-btn">
+                            <img src="assets/images/play-2.svg" alt="">
+                        </div>
+                        <div class="playlist-track-content">
+                            <h3 class="playlist-track-title">Сицилийский Апельсин</h3>
+                            <p class="playlist-track-name">Santal</p>
+                        </div>
                     </div>
-                    <p>02:34</p>
+                    <p class="playlist-track-time">02:31</p>
+                </div>
+            </div>
+            <div class="playlist-track">
+                <p class="playlist-track-num">3</p>
+                <div class="playlist-track-wrapper">
+                    <div class="playlist-track-block">
+                        <div class="playlist-track-btn">
+                            <img src="assets/images/play-2.svg" alt="">
+                        </div>
+                        <div class="playlist-track-content">
+                            <h3 class="playlist-track-title">Черешневое Лето</h3>
+                            <p class="playlist-track-name">Santal</p>
+                        </div>
+                    </div>
+                    <p class="playlist-track-time">02:19</p>
+                </div>
+            </div>
+            <div class="playlist-track">
+                <p class="playlist-track-num">4</p>
+                <div class="playlist-track-wrapper">
+                    <div class="playlist-track-block">
+                        <div class="playlist-track-btn">
+                            <img src="assets/images/play-2.svg" alt="">
+                        </div>
+                        <div class="playlist-track-content">
+                            <h3 class="playlist-track-title">Манговый Закат</h3>
+                            <p class="playlist-track-name">Santal</p>
+                        </div>
+                    </div>
+                    <p class="playlist-track-time">02:24</p>
+                </div>
+            </div>
+            <div class="playlist-track">
+                <p class="playlist-track-num">5</p>
+                <div class="playlist-track-wrapper">
+                    <div class="playlist-track-block">
+                        <div class="playlist-track-btn">
+                            <img src="assets/images/play-2.svg" alt="">
+                        </div>
+                        <div class="playlist-track-content">
+                            <h3 class="playlist-track-title">Грушевый Сад</h3>
+                            <p class="playlist-track-name">Santal</p>
+                        </div>
+                    </div>
+                    <p class="playlist-track-time">02:26</p>
+                </div>
+            </div>
+            <div class="playlist-track">
+                <p class="playlist-track-num">6</p>
+                <div class="playlist-track-wrapper">
+                    <div class="playlist-track-block">
+                        <div class="playlist-track-btn">
+                            <img src="assets/images/play-2.svg" alt="">
+                        </div>
+                        <div class="playlist-track-content">
+                            <h3 class="playlist-track-title">Апельсиновый Оазис</h3>
+                            <p class="playlist-track-name">Santal</p>
+                        </div>
+                    </div>
+                    <p class="playlist-track-time">02:30</p>
+                </div>
+            </div>
+            <div class="playlist-track">
+                <p class="playlist-track-num">7</p>
+                <div class="playlist-track-wrapper">
+                    <div class="playlist-track-block">
+                        <div class="playlist-track-btn">
+                            <img src="assets/images/play-2.svg" alt="">
+                        </div>
+                        <div class="playlist-track-content">
+                            <h3 class="playlist-track-title">Мультифруктовый Карнавал</h3>
+                            <p class="playlist-track-name">Santal</p>
+                        </div>
+                    </div>
+                    <p class="playlist-track-time">02:38</p>
                 </div>
             </div>
         </div>
@@ -152,5 +638,6 @@
         <a href="mailto:hotline@lactalis.ru">hotline@lactalis.ru</a></p>
     <p>© Santal / Lactalis. Все права защищены.</p>
 </footer>
+<script src="js/drinks-slider.js"></script>
 </body>
 </html>

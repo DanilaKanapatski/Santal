@@ -9,6 +9,14 @@ a {
     color: inherit;
 }
 
+img {
+    vertical-align: middle;
+}
+
+ul {
+    list-style: none;
+}
+
 body {
     font-family: "Nunito", sans-serif;
     /*background: linear-gradient(180deg, #cddd1b 6.73%, #e1f482 14.45%, #f9ffdb 24.27%, #fcf2d6 31.45%, #fdd8bc 44.86%, #fdccc2 49.16%, #fdc7c4 53.37%, #fefff9 70.67%, #ffe1e5 84.13%, #fdd1cf 88.98%, #feb5b2 100%);*/
