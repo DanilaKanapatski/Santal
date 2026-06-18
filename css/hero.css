@@ -1,0 +1,95 @@
+.hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate; /* чтобы z-index не «пробивал» наружу */
+}
+
+/* Слой декораций — одна картинка на весь блок */
+.hero__decor {
+    position: absolute;
+    inset: 0;
+    background: url('../assets/images/hero-back-1.png') center / cover no-repeat;
+    pointer-events: none; /* не блокирует клики по кнопке */
+    z-index: 1;
+}
+
+/* Проигрыватель */
+.hero__player {
+    position: absolute;
+    top: 121px;
+    right: 50px;
+    z-index: 2;
+}
+
+
+.hero__header {
+    display: flex;
+    gap: 873px;
+    padding-left: 72px;
+}
+
+.hero__nav ul {
+    padding: 36px 0;
+    display: flex;
+    gap: 28px;
+}
+
+.hero__nav ul li a {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 114%;
+    color: var(--dark-blue);
+}
+
+/* Контент поверх всего */
+.hero__content {
+    position: relative;
+    z-index: 3;
+    /* раскладка через grid/flex, никаких абсолютов */
+}
+
+.hero__title {
+    margin: 54px 0 0 563px;
+    font-weight: 800;
+    font-size: 54px;
+    line-height: 114%;
+    text-transform: uppercase;
+    color: var(--dark-blue);
+}
+
+.hero__title span {
+    margin-left: -157px;
+}
+
+.hero__btn {
+    margin: 44px 0 0 554px;
+    box-shadow: 0 8px 20px 0 rgba(255, 107, 0, 0.35);
+    background: linear-gradient(170deg, #e39d3d 0%, #ff6b00 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
+    border: 1px solid var(--white);
+    border-radius: 100px;
+    width: 307px;
+    height: 75px;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 114%;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.hero__btn img {
+    width: 33px;
+    height: 33px;
+}
+
+.hero__subtitle {
+    font-weight: 800;
+    font-size: 54px;
+    line-height: 114%;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--dark-blue);
+    margin: 337px auto 51px;
+}

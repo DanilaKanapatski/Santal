@@ -1,5 +1,24 @@
 .about {
-    padding: 1050px 0 104px;
+    padding: 31px 0 104px;
+    position: relative;
+}
+
+.about-img1 {
+    position: absolute;
+    top: 55px;
+    left: -163px;
+}
+
+.about-img2 {
+    position: absolute;
+    bottom: 18px;
+    left: 24px;
+}
+
+.about-img3 {
+    position: absolute;
+    bottom: -34px;
+    right: -166px;
 }
 
 .about-wrapper {

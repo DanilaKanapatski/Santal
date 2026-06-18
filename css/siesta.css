@@ -1,5 +1,12 @@
 .siesta {
     padding: 107px 0;
+    position: relative;
+}
+
+.siesta-img {
+    position: absolute;
+    top: -108px;
+    right: 236px;
 }
 
 .siesta-wrapper {

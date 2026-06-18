@@ -22,6 +22,18 @@ body {
     background: linear-gradient(180deg, #cddd1b 6.73%, #e1f482 14.45%, #f9ffdb 24.27%, #fcf2d6 31.45%, #fdd8bc 44.86%, #fdccc2 49.16%, #fdc7c4 53.37%, #fefff9 70.67%, #ffe1e5 84.13%, #fdd1cf 88.98%, #feb5b2 100%);
 }
 
+.classic-content-wrapper {
+    overflow: hidden;
+}
+
+.siesta-content-wrapper {
+    overflow: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 @font-face {
     font-family: 'Euclid Circular A';
     src: url('../assets/fonts/Euclid Circular A SemiBold.ttf') format('ttf');

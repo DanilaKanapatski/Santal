@@ -1,3 +1,42 @@
+.siesta-slider {
+    position: relative;
+}
+
+.siesta__decor {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;        /* не блокируют клики по слайдеру */
+    z-index: 0;
+}
+
+/* Каждый слой занимает весь блок, но виден только активный */
+.siesta__decor-layer {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Когда data-page секции совпадает с data-for-page слоя — показываем */
+.siesta-slider[data-page="0"] .siesta__decor-layer[data-for-page="0"],
+.siesta-slider[data-page="1"] .siesta__decor-layer[data-for-page="1"],
+.siesta-slider[data-page="2"] .siesta__decor-layer[data-for-page="2"] {
+    opacity: 1;
+}
+
+/* Слайдер поверх декора */
+
+
+/* Позиции конкретных фруктов */
+.siesta__deco { position: absolute; }
+.siesta__deco--pineapple-l { left: -114px;  top: -145px;}
+.siesta__deco--pineapple-r { right: -225px; top: -313px; }
+.siesta__deco--banana-l    { left: -145px;   top: -40px;}
+.siesta__deco--mango-r     { right: -130px;     bottom: -60px }
+.siesta__deco--pineapple2-l     { left: -168px;     top: -129px }
+.siesta__deco--apple-r     { right: -93px;     bottom: 8px }
+/* и т.д. для каждого */
+
 /* === Слайдер === */
 .siesta-slider-flavors {
     position: relative;
@@ -34,6 +73,7 @@
 }
 
 .siesta-slider-flavor__name {
+    width: 304px;
     margin-top: 16px;
     font-weight: 700;
     font-size: 26px;
@@ -49,15 +89,22 @@
     line-height: 114%;
     color: #1b4332;
     display: flex;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 100px;
-    width: 262px;
-    height: 64px;
-    backdrop-filter: blur(20px);
-    box-shadow: inset 0 1px 6px 0 rgba(255, 255, 255, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
-    background: rgba(255, 255, 255, 0.1) linear-gradient(180deg, rgba(253, 89, 2, 0.15) 0%, rgba(67, 115, 46, 0.15) 100%);
     align-items: center;
     justify-content: center;
+    width: 262px;
+    height: 64px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 100px;
+
+    background-image: linear-gradient(
+            180deg,
+            rgba(253, 89, 2, 0.18) 0%,
+            rgba(255, 255, 255, 0.75) 100%
+    );
+
+    box-shadow:
+            inset 0 1px 6px 0 rgba(255, 255, 255, 0.7),
+            0 6px 20px 0 rgba(0, 0, 0, 0.10);
 }
 
 /* Стрелки */

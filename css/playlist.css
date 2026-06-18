@@ -1,6 +1,20 @@
 .playlist {
     padding: 45px 0 110px;
     margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.playlist-img1 {
+    position: absolute;
+    top: 200px;
+    left: -238px;
+}
+
+.playlist-img2 {
+    position: absolute;
+    bottom: 107px;
+    right: -212px;
 }
 
 .playlist-title {
@@ -116,9 +130,11 @@
 .playlist-track-wrapper {
     box-shadow: 0 4px 6px 0 rgba(70, 78, 33, 0.33);
     background:
-            radial-gradient(50% 50% at 50% 50%, #f1ff43 0%, #fff 100%),
+            radial-gradient(50% 50% at 50% 50%,
+            #f1ff43 0%,
+            rgba(255, 255, 255, 0) 100%
+            ),
             #c5d85b;
-    background-blend-mode: overlay; /* или overlay, смотри что ближе */
     border-radius: 100px;
     display: flex;
     justify-content: space-between;

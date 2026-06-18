@@ -31,6 +31,10 @@
         // чтобы следующая страница начиналась с края — добавим page * 24px
         track.style.transform = `translateX(-${offset + page * 28}px)`;
 
+        // НОВОЕ: переключаем декорации
+        const section = root.closest('.classic-slider');
+        if (section) section.dataset.page = page;
+
         prevBtn.disabled = page === 0;
         nextBtn.disabled = page >= max;
     }

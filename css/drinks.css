@@ -92,8 +92,7 @@
     background: var(--dark-green);
     border-radius: 100%;
     left: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 4px;
 }
 
 .drinks-slide__content-desc {
