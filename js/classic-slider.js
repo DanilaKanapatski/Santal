@@ -29,7 +29,7 @@
         const offset = page * viewport.clientWidth;
         // gap внутри страницы: после последней карточки страницы нужен ещё один gap,
         // чтобы следующая страница начиналась с края — добавим page * 24px
-        track.style.transform = `translateX(-${offset + page * 28}px)`;
+        track.style.transform = `translateX(-${offset + page * 27}px)`;
 
         // НОВОЕ: переключаем декорации
         const section = root.closest('.classic-slider');

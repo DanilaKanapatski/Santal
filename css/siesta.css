@@ -17,6 +17,8 @@
 }
 
 .siesta-title {
+    margin: 0 auto;
+    max-width: 300px;
     font-weight: 700;
     font-size: 48px;
     line-height: 106%;
@@ -49,4 +51,43 @@
     line-height: 114%;
     text-align: center;
     color: var(--dark-blue);
+}
+
+@media screen and (max-width: 2299px) {
+    .siesta-img {
+        position: absolute;
+        top: -116px;
+        right: 209px;
+    }
+
+}
+
+@media screen and (max-width: 1919px) {
+    .siesta-img {
+        position: absolute;
+        top: -116px;
+        right: 17px;
+    }
+
+}
+
+@media screen and (max-width: 1719px) {
+    .siesta-img {
+        position: absolute;
+        top: -121px;
+        right: -13px;
+    }
+
+}
+
+@media screen and (max-width: 1514px) {
+    .siesta-img {
+        position: absolute;
+        top: -121px;
+        right: -72px;
+    }
+
+    .siesta-wrapper {
+        gap: 138px;
+    }
 }

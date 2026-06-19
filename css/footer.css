@@ -27,3 +27,16 @@
     display: block;
     font-weight: 700;
 }
+
+@media screen and (max-width: 1719px) {
+    .footer {
+        padding: 63px 34px 30px 37px;
+    }
+}
+
+@media screen and (max-width: 1519px) {
+    .footer {
+        padding: 63px 32px 30px 32px;
+    }
+}
+

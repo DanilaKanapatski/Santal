@@ -134,3 +134,9 @@
     right: 0;
 }
 
+@media screen and (max-width: 1514px) {
+    .siesta__deco--pineapple-r { right: -300px; top: -342px; }
+    .siesta__deco--mango-r     { right: -227px;     bottom: -60px }
+    .siesta__deco--pineapple2-l     { left: -168px;     top: -221px }
+    .siesta__deco--apple-r     { right: -127px;     bottom: -2px }
+}

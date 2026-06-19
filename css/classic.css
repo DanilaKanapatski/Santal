@@ -35,7 +35,7 @@
     margin-top: 28px;
     max-width: 387px;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 114%;
     text-align: center;
     color: var(--dark-blue);
@@ -56,4 +56,15 @@
     line-height: 114%;
     text-align: center;
     color: var(--dark-blue);
+}
+
+@media screen and (max-width: 1514px) {
+    .classic {
+        padding: 0 0 51px;
+    }
+
+    .classic-wrapper {
+        margin-top: 67px;
+        gap: 188px;
+    }
 }

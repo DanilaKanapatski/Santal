@@ -11,9 +11,109 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.drinks {
+    position: relative;
+}
+
+.drinks__decor {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.drinks__decor-layer {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Активный слой соответствует текущей странице.
+   Селекторы можно сгенерировать циклом в препроцессоре, но и руками — терпимо */
+.drinks[data-page="0"]  .drinks__decor-layer[data-for-page="0"],
+.drinks[data-page="1"]  .drinks__decor-layer[data-for-page="1"],
+.drinks[data-page="2"]  .drinks__decor-layer[data-for-page="2"],
+.drinks[data-page="3"]  .drinks__decor-layer[data-for-page="3"],
+.drinks[data-page="4"]  .drinks__decor-layer[data-for-page="4"],
+.drinks[data-page="5"]  .drinks__decor-layer[data-for-page="5"],
+.drinks[data-page="6"]  .drinks__decor-layer[data-for-page="6"],
+.drinks[data-page="7"]  .drinks__decor-layer[data-for-page="7"],
+.drinks[data-page="8"]  .drinks__decor-layer[data-for-page="8"],
+.drinks[data-page="9"]  .drinks__decor-layer[data-for-page="9"],
+.drinks[data-page="10"] .drinks__decor-layer[data-for-page="10"],
+.drinks[data-page="11"] .drinks__decor-layer[data-for-page="11"],
+.drinks[data-page="12"] .drinks__decor-layer[data-for-page="12"],
+.drinks[data-page="13"] .drinks__decor-layer[data-for-page="13"],
+.drinks[data-page="14"] .drinks__decor-layer[data-for-page="14"],
+.drinks[data-page="15"] .drinks__decor-layer[data-for-page="15"],
+.drinks[data-page="16"] .drinks__decor-layer[data-for-page="16"] {
+    opacity: 1;
+}
+
+/* Базовый класс для всех декоративных картинок */
+.drinks__deco {
+    position: absolute;
+}
+
+/* Позиции по слайдам. На скрине у вас бананы слева и справа на уровне слайда — пример: */
+.drinks__deco--fruit-19    { left: -82px;  top: 166px; }
+.drinks__deco--fruit-20    { right: -99px; bottom: 35px; }
+
+.drinks__deco--fruit-21    { left: -86px;      top: 133px; }
+.drinks__deco--fruit-22    { right: -141px;  bottom: -72px; }
+
+.drinks__deco--fruit-23 { left: -140px;  top: 166px; }
+.drinks__deco--fruit-24{right: -171px; bottom: -24px; }
+
+.drinks__deco--fruit-25{ left: -111px;     top: 180px; }
+.drinks__deco--fruit-26{ right: -122px;     bottom: -5px; }
+
+.drinks__deco--fruit-27{ left: -179px;     top: 114px; }
+.drinks__deco--fruit-28{ right: -217px;     bottom: -57px; }
+
+.drinks__deco--fruit-29{ left: -168px;     top: 56px; }
+.drinks__deco--fruit-30{ right: -70px;     bottom: -10px; }
+
+.drinks__deco--fruit-31{ left: -146px;     top: 174px; }
+.drinks__deco--fruit-32{ right: -171px;     bottom: -46px; }
+
+.drinks__deco--fruit-33{ left: -222px;     top: 152px; }
+.drinks__deco--fruit-34{ right: -197px;     bottom: -84px; }
+
+.drinks__deco--fruit-35{ left: -63px;     top: 221px; }
+.drinks__deco--fruit-36{ right: -137px;     bottom: -27px; }
+
+.drinks__deco--fruit-37{ left: -178px;     top: 118px; }
+.drinks__deco--fruit-38{ right: -109px;     bottom: 25px; }
+
+.drinks__deco--fruit-39{ left: -84px;     top: 212px; }
+.drinks__deco--fruit-40{ right: -100px;     bottom: 6px; }
+
+.drinks__deco--fruit-41{ left: -81px;     top: 225px; }
+.drinks__deco--fruit-42{ right: -118px;     bottom: 5px; }
+
+.drinks__deco--fruit-43{ left: -86px;     top: 133px; }
+.drinks__deco--fruit-44{ right: -159px;     bottom: -61px; }
+
+.drinks__deco--fruit-45{ left: -168px;     top: 127px; }
+.drinks__deco--fruit-46{ right: -124px;     bottom: -18px; }
+
+.drinks__deco--fruit-47{ left: -286px;     top: -8px; }
+.drinks__deco--fruit-48{ right: -190px;     bottom: -94px; }
+
+.drinks__deco--fruit-49{ left: -84px;     top: 244px; }
+.drinks__deco--fruit-50{ right: -149px;     bottom: -44px; }
+
+.drinks__deco--fruit-51{ left: -162px;     top: 203px; }
+.drinks__deco--fruit-52{ right: -112px;     bottom: 17px; }
+/* ...по одному правилу на фрукт */
+
 /* Обёртка слайдера */
 .drinks-slider {
     position: relative;
+    z-index: 1;
     max-width: 1078px;
     margin: 0 auto;
 }
@@ -117,29 +217,17 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 64px;
-    height: 64px;
+    width: 104px;
+    height: 104px;
     border-radius: 100%;
-    background: radial-gradient(180deg, #fdce02 0%, rgba(67, 115, 46, 0) 100%), rgba(255, 255, 255, 0.1) ;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    background-blend-mode: overlay; /* или overlay, смотри что ближе */
-    backdrop-filter: blur(20px);
-    box-shadow: inset 0 1px 6px 0 rgba(255, 255, 255, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
     cursor: pointer;
+    border: none;
+    background: none;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.2s, box-shadow 0.2s;
     z-index: 2;
-}
-
-.drinks-slider__btn:hover {
-    transform: translateY(-50%) scale(1.05);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-}
-
-.drinks-slider__btn:active {
-    transform: translateY(-50%) scale(0.98);
 }
 
 .drinks-slider__btn--prev { left: 0; }

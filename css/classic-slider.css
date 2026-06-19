@@ -40,8 +40,8 @@
 /* === Слайдер === */
 .classic-slider-flavors {
     position: relative;
-    padding: 118px 112px 93px;
-    max-width: 1172px;
+    padding: 95px 112px 70px;
+    max-width: 1160px;
     margin: 0 auto;
 }
 
@@ -51,7 +51,7 @@
 
 .classic-slider-flavors__track {
     display: flex;
-    gap: 28px;
+    gap: 27px;
     transition: transform 0.5s ease;
     will-change: transform;
 }
@@ -59,7 +59,7 @@
 /* Карточка вкуса. flex-basis вычисляется через CSS-переменную --per-view */
 .classic-slider-flavor {
     /* ширина одной карточки = (100% - суммарные гэпы) / кол-во видимых */
-    flex: 0 0 calc((100% - (var(--per-view) - 1) * 28px) / var(--per-view));
+    flex: 0 0 calc((100% - (var(--per-view) - 1) * 27px) / var(--per-view));
     min-width: 0;
     text-align: center;
 }
@@ -82,7 +82,7 @@
 }
 
 .classic-slider-flavor__btn {
-    margin: 28px auto 25px;
+    margin: 41px auto 25px;
     font-weight: 400;
     font-size: 18px;
     line-height: 114%;
@@ -126,3 +126,11 @@
     right: 0;
 }
 
+@media screen and (max-width: 1514px) {
+
+    .classic__deco--pineapple-r { right: -247px; top: -334px; }
+    .classic__deco--mango-r     { right: -178px;     bottom: 1px }
+    .classic__deco--pineapple2-l     { left: -106px;     top: 16px }
+    .classic__deco--apple-r     { right: -170px;     bottom: -34px }
+
+}

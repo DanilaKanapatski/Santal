@@ -185,3 +185,11 @@
     gap: 23px;
     align-items: center;
 }
+
+@media screen and (max-width: 11719px) {
+    .playlist-img2 {
+        position: absolute;
+        bottom: 107px;
+        right: -173px;
+    }
+}

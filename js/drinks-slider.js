@@ -23,6 +23,10 @@
         track.style.transform = `translateX(-${index * 100}%)`;
         current.textContent = index + 1;
         syncHeight();
+
+        // НОВОЕ: переключаем декорации
+        const section = track.closest('.drinks');
+        if (section) section.dataset.page = index;
     }
 
     prevBtn.addEventListener('click', () => {

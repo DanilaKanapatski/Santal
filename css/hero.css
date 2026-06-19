@@ -24,8 +24,9 @@
 
 .hero__header {
     display: flex;
-    gap: 873px;
+    justify-content: space-between;
     padding-left: 72px;
+    padding-right: 20px;
 }
 
 .hero__nav ul {
@@ -92,4 +93,94 @@
     text-align: center;
     color: var(--dark-blue);
     margin: 337px auto 51px;
+}
+
+@media screen and (max-width: 2299px){
+    .hero__decor {
+        background: url('../assets/images/hero-back-2.png') center / cover no-repeat;
+    }
+    .hero__title {
+        margin: 54px 0 0 373px;
+    }
+
+    .hero__title span {
+        margin-left: -106px;
+    }
+
+    .hero__player {
+        top: 192px;
+        right: 73px;
+    }
+
+    .hero__btn {
+        margin: 44px 0 0 364px;
+    }
+
+}
+
+@media screen and (max-width: 1919px){
+    .hero__decor {
+        background: url('../assets/images/hero-back-3.png') center / cover no-repeat;
+    }
+    .hero__title {
+        margin: 54px 0 0 227px;
+    }
+
+    .hero__title span {
+        margin-left: -106px;
+    }
+
+    .hero__player {
+        top: 165px;
+        right: 20px;
+    }
+
+    .hero__btn {
+        margin: 44px 0 0 268px;
+    }
+
+}
+
+@media screen and (max-width: 1719px) {
+    .hero__decor {
+        background: url('../assets/images/hero-back-4.png') center / cover no-repeat;
+    }
+    .hero__title {
+        margin: 54px 0 0 171px;
+    }
+
+    .hero__title span {
+        margin-left: -106px;
+    }
+
+    .hero__player {
+        top: 175px;
+        right: -52px;
+    }
+
+    .hero__btn {
+        margin: 44px 0 0 162px;
+    }
+}
+
+@media screen and (max-width: 1519px) {
+    .hero__decor {
+        background: url('../assets/images/hero-back-5.png') center / cover no-repeat;
+    }
+    .hero__title {
+        margin: 54px 0 0 171px;
+    }
+
+    .hero__title span {
+        margin-left: -106px;
+    }
+
+    .hero__player {
+        top: 184px;
+        right: -94px;
+    }
+
+    .hero__btn {
+        margin: 44px 0 0 162px;
+    }
 }
