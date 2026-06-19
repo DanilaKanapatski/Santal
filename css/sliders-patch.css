@@ -24,15 +24,36 @@
    ============================================================ */
 
 /* --- Планшет: 768px и ниже — по 2 карточки --- */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     #classic-slider,
     #siesta-slider {
         --per-view: 2 !important;
     }
+
+    .classic-slider-flavor,
+    .siesta-slider-flavor {
+        height: 521px;
+    }
 }
 
 /* --- Мобилка: 488px и ниже — по 1 карточке + стрелки снизу --- */
-@media (max-width: 488px) {
+@media (max-width: 767px) {
+    #classic-slider,
+    #siesta-slider {
+        --per-view: 1 !important;
+    }
+
+    .classic-slider-flavor,
+    .siesta-slider-flavor {
+        height: 517px;
+    }
+}
+
+
+}
+
+/* --- Мобилка: 488px и ниже — по 1 карточке + стрелки снизу --- */
+@media (max-width: 400px) {
     #classic-slider,
     #siesta-slider {
         --per-view: 1 !important;

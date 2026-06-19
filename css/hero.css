@@ -184,3 +184,180 @@
         margin: 44px 0 0 162px;
     }
 }
+
+@media (max-width: 1200px) {
+    .hero {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate; /* чтобы z-index не «пробивал» наружу */
+    }
+
+    /* Слой декораций — одна картинка на весь блок */
+    .hero__decor {
+        position: absolute;
+        inset: 0;
+        background: url('../assets/images/hero-back-6.png') no-repeat;
+        background-size: contain;
+        pointer-events: none; /* не блокирует клики по кнопке */
+        z-index: 1;
+    }
+
+    /* Проигрыватель */
+    .hero__player {
+        position: absolute;
+        top: 370px;
+        right: -96px;
+        z-index: 2;
+    }
+
+
+    .hero__header {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 72px;
+        padding-right: 20px;
+    }
+
+
+    /* Контент поверх всего */
+    .hero__content {
+        position: relative;
+        z-index: 3;
+        /* раскладка через grid/flex, никаких абсолютов */
+    }
+
+    .hero__title {
+        margin: 717px 0 0 246px;
+        font-weight: 800;
+        font-size: 48px;
+        line-height: 114%;
+        text-transform: uppercase;
+        color: var(--dark-blue);
+    }
+
+    .hero__title span {
+        margin-left: -106px;
+    }
+
+    .hero__btn {
+        margin: 44px 0 0 242px;
+        box-shadow: 0 8px 20px 0 rgba(255, 107, 0, 0.35);
+        background: linear-gradient(170deg, #e39d3d 0%, #ff6b00 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
+        border: 1px solid var(--white);
+        border-radius: 100px;
+        width: 285px;
+        height: 75px;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 114%;
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .hero__btn img {
+        width: 33px;
+        height: 33px;
+    }
+
+    .hero__subtitle {
+        font-weight: 800;
+        font-size: 48px;
+        line-height: 114%;
+        text-transform: uppercase;
+        text-align: center;
+        color: var(--dark-blue);
+        margin: 116px auto 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate; /* чтобы z-index не «пробивал» наружу */
+    }
+
+    /* Слой декораций — одна картинка на весь блок */
+    .hero__decor {
+        position: absolute;
+        inset: 0;
+        background: url('../assets/images/hero-back-7.png') no-repeat;
+        background-size: contain;
+        pointer-events: none; /* не блокирует клики по кнопке */
+        z-index: 1;
+    }
+
+    /* Проигрыватель */
+    .hero__player {
+        position: absolute;
+        top: 281px;
+        right: -107px;
+        z-index: 2;
+    }
+
+
+    .hero__header {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 72px;
+        padding-right: 20px;
+    }
+
+
+    /* Контент поверх всего */
+    .hero__content {
+        position: relative;
+        z-index: 3;
+        /* раскладка через grid/flex, никаких абсолютов */
+    }
+
+    .hero__title {
+        margin: 558px 0 0 131px;
+        font-weight: 800;
+        font-size: 44px;
+        line-height: 114%;
+        text-transform: uppercase;
+        color: var(--dark-blue);
+    }
+
+    .hero__title span {
+        margin-left: -106px;
+    }
+
+    .hero__btn {
+        margin: 44px 0 0 103px;
+        box-shadow: 0 8px 20px 0 rgba(255, 107, 0, 0.35);
+        background: linear-gradient(170deg, #e39d3d 0%, #ff6b00 100%), linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
+        border: 1px solid var(--white);
+        border-radius: 100px;
+        width: 285px;
+        height: 75px;
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 114%;
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .hero__btn img {
+        width: 33px;
+        height: 33px;
+    }
+
+    .hero__subtitle {
+        font-weight: 800;
+        font-size: 44px;
+        line-height: 114%;
+        text-transform: uppercase;
+        text-align: center;
+        color: var(--dark-blue);
+        margin: 110px auto 33px;
+    }
+}
+

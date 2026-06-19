@@ -21,3 +21,73 @@
     text-align: center;
     color: var(--dark-blue);
 }
+
+@media screen and (max-width: 1200px) {
+    .recipes {
+        padding: 30px 0 30px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .recipes-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 42px;
+        justify-content: center;
+        margin-bottom: 42px;
+    }
+
+    .recipes-wrapper svg {
+        width: 134px;
+    }
+
+    .recipes img {
+        width: 623px;
+        border-radius: 43px;
+    }
+
+    .recipes-title {
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 100%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        text-align: center;
+        color: var(--dark-blue);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .recipes {
+        padding: 51px 0 35px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .recipes-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 42px;
+        justify-content: center;
+        margin-bottom: 48px;
+    }
+
+    .recipes-wrapper svg {
+        display: none;
+    }
+
+    .recipes img {
+        width: 412px;
+        border-radius: 43px;
+    }
+
+    .recipes-title {
+        font-weight: 800;
+        font-size: 44px;
+        line-height: 100%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        text-align: center;
+        color: var(--dark-blue);
+    }
+}

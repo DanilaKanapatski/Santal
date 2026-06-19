@@ -91,3 +91,115 @@
         gap: 138px;
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .siesta {
+        padding: 27px 0 53px 0;
+        position: relative;
+    }
+
+    .siesta-img {
+        display: none;
+    }
+
+    .siesta-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 52px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .siesta-wrapper img {
+        width: 438px;
+    }
+
+    .siesta-title {
+        margin: 0 auto;
+        max-width: 300px;
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 106%;
+        text-align: center;
+        color: #dc3755;
+    }
+
+    .siesta-desc {
+        margin-top: 28px;
+        max-width: 387px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 114%;
+        text-align: center;
+        color: var(--dark-blue);
+    }
+
+    .siesta-btn {
+        margin-top: 48px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .siesta-btn p {
+        max-width: 130px;
+        font-weight: 800;
+        font-size: 16px;
+        line-height: 114%;
+        text-align: center;
+        color: var(--dark-blue);
+    }
+
+    .siesta-btn svg {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .siesta {
+        padding: 45px 0 45px 0;
+        position: relative;
+    }
+
+    .siesta-img {
+        display: none;
+    }
+
+    .siesta-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 52px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .siesta-wrapper img {
+        width: 371px;
+    }
+
+    .siesta-title {
+        margin: 0 auto;
+        max-width: 220px;
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 106%;
+        text-align: center;
+        color: #dc3755;
+    }
+
+    .siesta-desc {
+        margin-top: 22px;
+        max-width: 387px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 114%;
+        text-align: center;
+        color: var(--dark-blue);
+    }
+
+    .siesta-btn {
+        display: none;
+    }
+}
