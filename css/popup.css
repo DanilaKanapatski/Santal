@@ -1,0 +1,172 @@
+/* ============================================================
+   ПУНКТ 2 — Попап «подробнее о вкусе»
+   ============================================================
+   Один попап — на оба слайдера. Разные цвета через модификатор
+   .popup--siesta / .popup--classic, который ставится в JS перед
+   открытием.
+*/
+
+/* Подложка-затемнение */
+.popup {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.popup--classic {
+    background: rgba(255, 233, 108, 0.72);
+}
+
+.popup--siesta {
+    background: #fdc8c4;
+}
+
+.popup.is-open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Карточка попапа */
+.popup__card {
+    position: relative;
+    max-width: 732px;
+    width: 100%;
+    min-height: 554px;
+    border-radius: 300px 40px 40px 300px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Цвета фона по типу слайдера (значения взяты из Figma) */
+.popup--siesta .popup__card {
+    box-shadow: 0 4px 11px 0 rgba(165, 144, 138, 0.46);
+    background: linear-gradient(180deg, #fdc9c3 0%, #ff9faf 100%);
+}
+
+.popup--classic .popup__card {
+    box-shadow: 0 4px 11px 0 rgba(165, 144, 138, 0.46);
+    background: linear-gradient(180deg, #fdc9c3 0%, #ffc17e 100%);
+}
+
+/* Крестик закрытия */
+.popup__close {
+    position: absolute;
+    top: 21px;
+    right: 29px;
+    width: 28px;
+    height: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+.popup__close svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* Контент попапа — двухколоночная раскладка */
+.popup__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.popup__content {
+  display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 87px;
+}
+
+.popup__title {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 110%;
+    color: var(--dark-blue);
+}
+
+.popup__desc {
+    max-width: 416px;
+    margin-top: 12px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 114%;
+    color: var(--dark-blue);
+}
+
+.popup__stats {
+    margin-top: 26px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.popup__stats div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.popup__stat-value {
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 114%;
+    color: #081576;
+}
+
+.popup__stat-label {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 114%;
+    color: var(--dark-blue);
+}
+
+.popup__cta {
+    position: absolute;
+    bottom: 37px;
+    right: 42px;
+    margin-top: 93px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 114%;
+    color: #1b4332;
+    text-decoration: none;
+    cursor: pointer;
+    backdrop-filter: blur(20px);
+    box-shadow: inset 0 1px 6px 0 rgba(255, 255, 255, 0.4), 0 6px 12px 0 rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.25) linear-gradient(180deg, rgba(126, 217, 87, 0.15) 0%, rgba(67, 115, 46, 0.15) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 100px;
+    width: 275px;
+    height: 75px;
+}
+
+/* Блокируем прокрутку body, когда попап открыт */
+body.popup-open {
+    overflow: hidden;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .popup__card {
+        flex-direction: column;
+        border-radius: 40px;
+        padding: 60px 24px 32px;
+    }
+    .popup__title { font-size: 24px; }
+}

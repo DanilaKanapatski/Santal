@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="css/drinks.css">
     <link rel="stylesheet" href="css/playlist.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/burger.css">
+    <link rel="stylesheet" href="css/sliders-patch.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,7 +48,19 @@
                     </li>
                 </ul>
             </nav>
+            <button class="burger" aria-label="Меню" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
         </header>
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="#about">О бренде</a></li>
+                <li><a href="#classic">Ассортимент</a></li>
+                <li><a href="#recipes">Рецепты</a></li>
+                <li><a href="#playlist">Плейлист Santal</a></li>
+                <li><a href="#footer">Контакты</a></li>
+            </ul>
+        </div>
 
         <!-- Вся статичная декорация одной картинкой -->
         <div class="hero__decor" aria-hidden="true"></div>
@@ -352,6 +367,28 @@
                             </div>
                             <h3 class="classic-slider-flavor__name">Ананас</h3>
                             <a class="classic-slider-flavor__btn" href="#">подробнее о вкусе</a>
+                            <template class="popup-content">
+                                <div class="popup__image">
+                                    <img src="assets/images/popap-1.png" alt="Ананас">
+                                </div>
+                                <div class="popup__content">
+                                    <h2 class="popup__title">Ананас</h2>
+                                    <p class="popup__desc">
+                                        Состав: 100% ананасовый сок
+                                    </p>
+                                    <div class="popup__stats">
+                                        <div>
+                                            <div class="popup__stat-value">11,2 г</div>
+                                            <div class="popup__stat-label">Углеводы</div>
+                                        </div>
+                                        <div>
+                                            <div class="popup__stat-value">46 кКал/ 193 кДж</div>
+                                            <div class="popup__stat-label">Пищевая ценность</div>
+                                        </div>
+                                    </div>
+                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                </div>
+                            </template>
                         </article>
                         <article class="classic-slider-flavor">
                             <div class="classic-slider-flavor__image">
@@ -359,6 +396,29 @@
                             </div>
                             <h3 class="classic-slider-flavor__name">Апельсин</h3>
                             <a class="classic-slider-flavor__btn" href="#">подробнее о вкусе</a>
+                            <template class="popup-content">
+                                <div class="popup__image">
+                                    <img src="assets/images/popap-2.png" alt="Ананас">
+                                </div>
+                                <div class="popup__content">
+                                    <h2 class="popup__title">Апельсин</h2>
+                                    <p class="popup__desc">
+                                        Состав: 100% апельсиновый сок
+                                    </p>
+                                    <div class="popup__stats">
+                                        <div>
+                                            <div class="popup__stat-value">11,2 г</div>
+                                            <div class="popup__stat-label">Углеводы</div>
+                                        </div>
+                                        <div>
+                                            <div class="popup__stat-value">45 кКал/ 188 кДж</div>
+                                            <div class="popup__stat-label">Пищевая ценность</div>
+                                        </div>
+                                    </div>
+                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                </div>
+                            </template>
+
                         </article>
                         <article class="classic-slider-flavor">
                             <div class="classic-slider-flavor__image">
@@ -366,6 +426,29 @@
                             </div>
                             <h3 class="classic-slider-flavor__name">Яблоко</h3>
                             <a class="classic-slider-flavor__btn" href="#">подробнее о вкусе</a>
+                            <template class="popup-content">
+                                <div class="popup__image">
+                                    <img src="assets/images/popap-3.png" alt="Ананас">
+                                </div>
+                                <div class="popup__content">
+                                    <h2 class="popup__title">Яблоко</h2>
+                                    <p class="popup__desc">
+                                        Состав: 100% яблочный сок
+                                    </p>
+                                    <div class="popup__stats">
+                                        <div>
+                                            <div class="popup__stat-value">11,2 г</div>
+                                            <div class="popup__stat-label">Углеводы</div>
+                                        </div>
+                                        <div>
+                                            <div class="popup__stat-value">45 кКал/ 188 кДж</div>
+                                            <div class="popup__stat-label">Пищевая ценность</div>
+                                        </div>
+                                    </div>
+                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                </div>
+                            </template>
+
                         </article>
                         <article class="classic-slider-flavor">
                             <div class="classic-slider-flavor__image">
@@ -373,6 +456,29 @@
                             </div>
                             <h3 class="classic-slider-flavor__name">Томат</h3>
                             <a class="classic-slider-flavor__btn" href="#">подробнее о вкусе</a>
+                            <template class="popup-content">
+                                <div class="popup__image">
+                                    <img src="assets/images/popap-4.png" alt="Ананас">
+                                </div>
+                                <div class="popup__content">
+                                    <h2 class="popup__title">Томат</h2>
+                                    <p class="popup__desc">
+                                        Состав: томатное пюре, соль
+                                    </p>
+                                    <div class="popup__stats">
+                                        <div>
+                                            <div class="popup__stat-value">2,5 г</div>
+                                            <div class="popup__stat-label">Углеводы</div>
+                                        </div>
+                                        <div>
+                                            <div class="popup__stat-value">10 кКал/ 42 кДж</div>
+                                            <div class="popup__stat-label">Пищевая ценность</div>
+                                        </div>
+                                    </div>
+                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                </div>
+                            </template>
+
                         </article>
                         <article class="classic-slider-flavor">
                             <div class="classic-slider-flavor__image">
@@ -380,6 +486,29 @@
                             </div>
                             <h3 class="classic-slider-flavor__name">Банан</h3>
                             <a class="classic-slider-flavor__btn" href="#">подробнее о вкусе</a>
+                            <template class="popup-content">
+                                <div class="popup__image">
+                                    <img src="assets/images/popap-5.png" alt="Ананас">
+                                </div>
+                                <div class="popup__content">
+                                    <h2 class="popup__title">Банан</h2>
+                                    <p class="popup__desc">
+                                        Состав: банановое пюре, сахар, регулятор кислотности лимонная кислота, вода питьевая
+                                    </p>
+                                    <div class="popup__stats">
+                                        <div>
+                                            <div class="popup__stat-value">10 г</div>
+                                            <div class="popup__stat-label">Углеводы</div>
+                                        </div>
+                                        <div>
+                                            <div class="popup__stat-value">40 кКал/ 167 кДж</div>
+                                            <div class="popup__stat-label">Пищевая ценность</div>
+                                        </div>
+                                    </div>
+                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                </div>
+                            </template>
+
                         </article>
                         <article class="classic-slider-flavor">
                             <div class="classic-slider-flavor__image">
@@ -387,6 +516,29 @@
                             </div>
                             <h3 class="classic-slider-flavor__name">Манго</h3>
                             <a class="classic-slider-flavor__btn" href="#">подробнее о вкусе</a>
+                            <template class="popup-content">
+                                <div class="popup__image">
+                                    <img src="assets/images/popap-6.png" alt="Ананас">
+                                </div>
+                                <div class="popup__content">
+                                    <h2 class="popup__title">Манго</h2>
+                                    <p class="popup__desc">
+                                        Состав: пюре из манго, сахар, регулятор кислотности лимонная кислота, вода питьевая
+                                    </p>
+                                    <div class="popup__stats">
+                                        <div>
+                                            <div class="popup__stat-value">16 г</div>
+                                            <div class="popup__stat-label">Углеводы</div>
+                                        </div>
+                                        <div>
+                                            <div class="popup__stat-value">64 кКал/ 268 кДж</div>
+                                            <div class="popup__stat-label">Пищевая ценность</div>
+                                        </div>
+                                    </div>
+                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                </div>
+                            </template>
+
                         </article>
                         <article class="classic-slider-flavor">
                             <div class="classic-slider-flavor__image">
@@ -394,6 +546,29 @@
                             </div>
                             <h3 class="classic-slider-flavor__name">Мультифрукт</h3>
                             <a class="classic-slider-flavor__btn" href="#">подробнее о вкусе</a>
+                            <template class="popup-content">
+                                <div class="popup__image">
+                                    <img src="assets/images/popap-7.png" alt="Ананас">
+                                </div>
+                                <div class="popup__content">
+                                    <h2 class="popup__title">Мультифрукт</h2>
+                                    <p class="popup__desc">
+                                        Состав: яблочный сок, ананасовый сок, пюре банана, апельсиновый сок, пюре манго, сахар, лимонная кислота, вода питьевая
+                                    </p>
+                                    <div class="popup__stats">
+                                        <div>
+                                            <div class="popup__stat-value">11,9 г</div>
+                                            <div class="popup__stat-label">Углеводы</div>
+                                        </div>
+                                        <div>
+                                            <div class="popup__stat-value">48 кКал/ 209 кДж</div>
+                                            <div class="popup__stat-label">Пищевая ценность</div>
+                                        </div>
+                                    </div>
+                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                </div>
+                            </template>
+
                         </article>
                         <article class="classic-slider-flavor">
                             <div class="classic-slider-flavor__image">
@@ -401,6 +576,29 @@
                             </div>
                             <h3 class="classic-slider-flavor__name">Груша</h3>
                             <a class="classic-slider-flavor__btn" href="#">подробнее о вкусе</a>
+                            <template class="popup-content">
+                                <div class="popup__image">
+                                    <img src="assets/images/popap-8.png" alt="Ананас">
+                                </div>
+                                <div class="popup__content">
+                                    <h2 class="popup__title">Груша</h2>
+                                    <p class="popup__desc">
+                                        Состав: грушевое пюре, сахар, регулятор кислотности лимонная кислота, вода питьевая
+                                    </p>
+                                    <div class="popup__stats">
+                                        <div>
+                                            <div class="popup__stat-value">15,5 г</div>
+                                            <div class="popup__stat-label">Углеводы</div>
+                                        </div>
+                                        <div>
+                                            <div class="popup__stat-value">62 кКал/ 260 кДж</div>
+                                            <div class="popup__stat-label">Пищевая ценность</div>
+                                        </div>
+                                    </div>
+                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                </div>
+                            </template>
+
                         </article>
                         <article class="classic-slider-flavor">
                             <div class="classic-slider-flavor__image">
@@ -408,6 +606,29 @@
                             </div>
                             <h3 class="classic-slider-flavor__name">Черешня</h3>
                             <a class="classic-slider-flavor__btn" href="#">подробнее о вкусе</a>
+                            <template class="popup-content">
+                                <div class="popup__image">
+                                    <img src="assets/images/popap-9.png" alt="Ананас">
+                                </div>
+                                <div class="popup__content">
+                                    <h2 class="popup__title">Черешня</h2>
+                                    <p class="popup__desc">
+                                        Состав: сок черешни, сахар, регулятор кислотности лимонная кислота, вода питьевая
+                                    </p>
+                                    <div class="popup__stats">
+                                        <div>
+                                            <div class="popup__stat-value">13,9 г</div>
+                                            <div class="popup__stat-label">Углеводы</div>
+                                        </div>
+                                        <div>
+                                            <div class="popup__stat-value">56 кКал/ 234 кДж</div>
+                                            <div class="popup__stat-label">Пищевая ценность</div>
+                                        </div>
+                                    </div>
+                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                </div>
+                            </template>
+
                         </article>
 
 
@@ -624,6 +845,29 @@
                             </div>
                             <h3 class="siesta-slider-flavor__name">Красный <br>Сицилийский Апельсин</h3>
                             <a class="siesta-slider-flavor__btn" href="#">подробнее о вкусе</a>
+                            <template class="popup-content">
+                                <div class="popup__image">
+                                    <img src="assets/images/popap-10.png" alt="Ананас">
+                                </div>
+                                <div class="popup__content">
+                                    <h2 class="popup__title">Красный сицилийский апельсин</h2>
+                                    <p class="popup__desc">
+                                        Состав: сок из красных сицилийских апельсинов, сахар, регулятор кислотности лимонная кислота, краситель Е120, ароматизатор натуральный, вода питьевая
+                                    </p>
+                                    <div class="popup__stats">
+                                        <div>
+                                            <div class="popup__stat-value">11,5 г</div>
+                                            <div class="popup__stat-label">Углеводы</div>
+                                        </div>
+                                        <div>
+                                            <div class="popup__stat-value">46 кКал/ 193 кДж</div>
+                                            <div class="popup__stat-label">Пищевая ценность</div>
+                                        </div>
+                                    </div>
+                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                </div>
+                            </template>
+
                         </article>
                         <article class="siesta-slider-flavor">
                             <div class="siesta-slider-flavor__image">
@@ -631,6 +875,29 @@
                             </div>
                             <h3 class="siesta-slider-flavor__name">Гранат</h3>
                             <a class="siesta-slider-flavor__btn" href="#">подробнее о вкусе</a>
+                            <template class="popup-content">
+                                <div class="popup__image">
+                                    <img src="assets/images/popap-11.png" alt="Ананас">
+                                </div>
+                                <div class="popup__content">
+                                    <h2 class="popup__title">Гранат</h2>
+                                    <p class="popup__desc">
+                                        Состав: сок граната, сахар,регулятор кислотности лимонная кислота, краситель Е163, ароматизатор натуральный, вода питьевая
+                                    </p>
+                                    <div class="popup__stats">
+                                        <div>
+                                            <div class="popup__stat-value">12,5 г</div>
+                                            <div class="popup__stat-label">Углеводы</div>
+                                        </div>
+                                        <div>
+                                            <div class="popup__stat-value">50 кКал/ 209 кДж</div>
+                                            <div class="popup__stat-label">Пищевая ценность</div>
+                                        </div>
+                                    </div>
+                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                </div>
+                            </template>
+
                         </article>
                         <article class="siesta-slider-flavor">
                             <div class="siesta-slider-flavor__image">
@@ -638,6 +905,29 @@
                             </div>
                             <h3 class="siesta-slider-flavor__name">Красный грейпфрут</h3>
                             <a class="siesta-slider-flavor__btn" href="#">подробнее о вкусе</a>
+                            <template class="popup-content">
+                                <div class="popup__image">
+                                    <img src="assets/images/popap-12.png" alt="Ананас">
+                                </div>
+                                <div class="popup__content">
+                                    <h2 class="popup__title">Красный грейпфрут</h2>
+                                    <p class="popup__desc">
+                                        Состав: грейпфрутовый сок, сахар, регулятор кислотности лимонная кислота, загуститель пектины, ароматизатор натуральный, краситель Е120, вода питьевая
+                                    </p>
+                                    <div class="popup__stats">
+                                        <div>
+                                            <div class="popup__stat-value">10,6 г</div>
+                                            <div class="popup__stat-label">Углеводы</div>
+                                        </div>
+                                        <div>
+                                            <div class="popup__stat-value">42 кКал/ 176 кДж</div>
+                                            <div class="popup__stat-label">Пищевая ценность</div>
+                                        </div>
+                                    </div>
+                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                </div>
+                            </template>
+
                         </article>
                         <article class="siesta-slider-flavor">
                             <div class="siesta-slider-flavor__image">
@@ -645,6 +935,29 @@
                             </div>
                             <h3 class="siesta-slider-flavor__name">Апельсин</h3>
                             <a class="siesta-slider-flavor__btn" href="#">подробнее о вкусе</a>
+                            <template class="popup-content">
+                                <div class="popup__image">
+                                    <img src="assets/images/popap-13.png" alt="Ананас">
+                                </div>
+                                <div class="popup__content">
+                                    <h2 class="popup__title">Апельсин</h2>
+                                    <p class="popup__desc">
+                                        Состав: сок из апельсинов, сахар, регулятор кислотности лимонная кислота, ароматизатор натуральный, вода питьевая
+                                    </p>
+                                    <div class="popup__stats">
+                                        <div>
+                                            <div class="popup__stat-value">11,6 г</div>
+                                            <div class="popup__stat-label">Углеводы</div>
+                                        </div>
+                                        <div>
+                                            <div class="popup__stat-value">46 кКал/ 193 кДж</div>
+                                            <div class="popup__stat-label">Пищевая ценность</div>
+                                        </div>
+                                    </div>
+                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                </div>
+                            </template>
+
                         </article>
                         <article class="siesta-slider-flavor">
                             <div class="siesta-slider-flavor__image">
@@ -652,6 +965,29 @@
                             </div>
                             <h3 class="siesta-slider-flavor__name">Красный виноград</h3>
                             <a class="siesta-slider-flavor__btn" href="#">подробнее о вкусе</a>
+                            <template class="popup-content">
+                                <div class="popup__image">
+                                    <img src="assets/images/popap-14.png" alt="Ананас">
+                                </div>
+                                <div class="popup__content">
+                                    <h2 class="popup__title">Красный виноград</h2>
+                                    <p class="popup__desc">
+                                        Состав: cок красного винограда, сахар, регулятор кислотности лимонная кислота, ароматизатор натуральный, вода питьевая
+                                    </p>
+                                    <div class="popup__stats">
+                                        <div>
+                                            <div class="popup__stat-value">14,4 г</div>
+                                            <div class="popup__stat-label">Углеводы</div>
+                                        </div>
+                                        <div>
+                                            <div class="popup__stat-value">57 кКал/239 кДж</div>
+                                            <div class="popup__stat-label">Пищевая ценность</div>
+                                        </div>
+                                    </div>
+                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                </div>
+                            </template>
+
                         </article>
                         <article class="siesta-slider-flavor">
                             <div class="siesta-slider-flavor__image">
@@ -659,6 +995,29 @@
                             </div>
                             <h3 class="siesta-slider-flavor__name">Клюква</h3>
                             <a class="siesta-slider-flavor__btn" href="#">подробнее о вкусе</a>
+                            <template class="popup-content">
+                                <div class="popup__image">
+                                    <img src="assets/images/popap-15.png" alt="Ананас">
+                                </div>
+                                <div class="popup__content">
+                                    <h2 class="popup__title">Клюква</h2>
+                                    <p class="popup__desc">
+                                        Состав: сок клюквы, сахар, ароматизатор натуральный, вода питьевая
+                                    </p>
+                                    <div class="popup__stats">
+                                        <div>
+                                            <div class="popup__stat-value">11,5 г</div>
+                                            <div class="popup__stat-label">Углеводы</div>
+                                        </div>
+                                        <div>
+                                            <div class="popup__stat-value">46 кКал/ 193 кДж</div>
+                                            <div class="popup__stat-label">Пищевая ценность</div>
+                                        </div>
+                                    </div>
+                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                </div>
+                            </template>
+
                         </article>
                         <article class="siesta-slider-flavor">
                             <div class="siesta-slider-flavor__image">
@@ -666,6 +1025,29 @@
                             </div>
                             <h3 class="siesta-slider-flavor__name">Красная вишня</h3>
                             <a class="siesta-slider-flavor__btn" href="#">подробнее о вкусе</a>
+                            <template class="popup-content">
+                                <div class="popup__image">
+                                    <img src="assets/images/popap-16.png" alt="Ананас">
+                                </div>
+                                <div class="popup__content">
+                                    <h2 class="popup__title">Красная вишня</h2>
+                                    <p class="popup__desc">
+                                        Состав: вишневый сок, сахар, регулятор кислотности лимонная кислота, краситель Е163, ароматизатор натуральный, вода питьевая
+                                    </p>
+                                    <div class="popup__stats">
+                                        <div>
+                                            <div class="popup__stat-value">13,4 г</div>
+                                            <div class="popup__stat-label">Углеводы</div>
+                                        </div>
+                                        <div>
+                                            <div class="popup__stat-value">54 кКал/ 226 кДж</div>
+                                            <div class="popup__stat-label">Пищевая ценность</div>
+                                        </div>
+                                    </div>
+                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                </div>
+                            </template>
+
                         </article>
                         <article class="siesta-slider-flavor">
                             <div class="siesta-slider-flavor__image">
@@ -673,6 +1055,29 @@
                             </div>
                             <h3 class="siesta-slider-flavor__name">Лесные ягоды</h3>
                             <a class="siesta-slider-flavor__btn" href="#">подробнее о вкусе</a>
+                            <template class="popup-content">
+                                <div class="popup__image">
+                                    <img src="assets/images/popap-16.png" alt="Ананас">
+                                </div>
+                                <div class="popup__content">
+                                    <h2 class="popup__title">Лесные ягоды</h2>
+                                    <p class="popup__desc">
+                                        Состав: сок мультифруктовый (виноградный, яблочный, лимонный, малиновый, черничный, бузины, черной смородины), сахар, ароматизатор натуральный, вода питьевая
+                                    </p>
+                                    <div class="popup__stats">
+                                        <div>
+                                            <div class="popup__stat-value">12,2 г</div>
+                                            <div class="popup__stat-label">Углеводы</div>
+                                        </div>
+                                        <div>
+                                            <div class="popup__stat-value">49 кКал/ 205 кДж</div>
+                                            <div class="popup__stat-label">Пищевая ценность</div>
+                                        </div>
+                                    </div>
+                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                </div>
+                            </template>
+
                         </article>
 
 
@@ -1559,8 +1964,21 @@
         <a href="mailto:hotline@lactalis.ru">hotline@lactalis.ru</a></p>
     <p>© Santal / Lactalis. Все права защищены.</p>
 </footer>
+<div class="popup" id="popup" role="dialog" aria-modal="true">
+    <div class="popup__card">
+        <button class="popup__close" aria-label="Закрыть">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M23.3389 4.00043C23.5744 4.02256 23.7851 4.14488 23.9365 4.31195C24.2387 4.64576 24.3435 5.21196 23.9121 5.64496L23.9111 5.64594L15.3252 14.1967L23.9111 22.7485C24.3436 23.1806 24.2387 23.7476 23.9365 24.0815C23.7852 24.2487 23.5745 24.3706 23.3389 24.393C23.1276 24.413 22.9113 24.3513 22.7197 24.1948L22.6396 24.1215L14 15.5161L5.36133 24.1215C5.15115 24.3315 4.90358 24.4158 4.66211 24.393C4.42657 24.3707 4.21596 24.2485 4.06445 24.0815C3.76178 23.7475 3.65579 23.1796 4.08984 22.7475L12.6748 14.1967L4.08984 5.64594C3.65639 5.21276 3.76151 4.64589 4.06445 4.31195C4.21607 4.14485 4.42639 4.02252 4.66211 4.00043C4.90354 3.97785 5.15119 4.06207 5.36133 4.27191L14 12.8764L22.6396 4.27191L22.7197 4.19965C22.9113 4.04286 23.1275 3.9806 23.3389 4.00043Z" fill="#657608" stroke="#657608" stroke-width="0.4"/>
+            </svg>
+        </button>
+        <div class="popup__body"><!-- сюда JS вставит содержимое --></div>
+    </div>
+</div>
 <script src="js/classic-slider.js"></script>
 <script src="js/siesta-slider.js"></script>
 <script src="js/drinks-slider.js"></script>
+<script src="js/popup.js"></script>
+<script src="js/burger.js"></script>
+
 </body>
 </html>

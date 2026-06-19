@@ -1,0 +1,74 @@
+/* ============================================================
+   ПУНКТ 1 — Кнопки «подробнее о вкусе» на одном уровне
+   ============================================================
+   Карточка становится колонкой, у кнопки margin-top: auto —
+   она прижимается к низу карточки. Трек уже flex со
+   stretch по умолчанию, так что все карточки одинаковой высоты.
+*/
+.classic-slider-flavor,
+.siesta-slider-flavor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 527px;
+}
+
+.classic-slider-flavor__btn,
+.siesta-slider-flavor__btn {
+    margin-top: auto;
+    cursor: pointer;
+}
+
+/* ============================================================
+   ПУНКТЫ 4–6 — Адаптив количества карточек и положения стрелок
+   ============================================================ */
+
+/* --- Планшет: 768px и ниже — по 2 карточки --- */
+@media (max-width: 1024px) {
+    #classic-slider,
+    #siesta-slider {
+        --per-view: 2 !important;
+    }
+}
+
+/* --- Мобилка: 488px и ниже — по 1 карточке + стрелки снизу --- */
+@media (max-width: 488px) {
+    #classic-slider,
+    #siesta-slider {
+        --per-view: 1 !important;
+    }
+
+    /* Освобождаем боковые отступы для стрелок и резервируем место снизу */
+    .classic-slider-flavors,
+    .siesta-slider-flavors {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 130px;
+    }
+
+    /* Стрелки уезжают вниз и центрируются */
+    .classic-slider-flavors__btn,
+    .siesta-slider-flavors__btn {
+        top: auto;
+        bottom: 12px;
+        transform: none;
+        width: 84px;
+        height: 84px;
+    }
+
+    .classic-slider-flavors__btn svg,
+    .siesta-slider-flavors__btn svg {
+        width: 84px;
+        height: 84px;
+    }
+
+    .classic-slider-flavors__btn--prev,
+    .siesta-slider-flavors__btn--prev {
+        left: calc(50% - 90px);
+    }
+
+    .classic-slider-flavors__btn--next,
+    .siesta-slider-flavors__btn--next {
+        right: calc(50% - 90px);
+    }
+}

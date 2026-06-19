@@ -54,6 +54,7 @@
     gap: 28px;
     transition: transform 0.5s ease;
     will-change: transform;
+    margin-bottom: 25px;
 }
 
 /* Карточка вкуса. flex-basis вычисляется через CSS-переменную --per-view */
@@ -83,7 +84,7 @@
 }
 
 .siesta-slider-flavor__btn {
-    margin: 28px auto 25px;
+    margin: 28px auto 0;
     font-weight: 400;
     font-size: 18px;
     line-height: 114%;
