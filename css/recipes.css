@@ -126,3 +126,39 @@
         color: var(--dark-blue);
     }
 }
+
+@media screen and (max-width: 399px) {
+    .recipes {
+        padding: 51px 0 36px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .recipes-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 41px;
+        justify-content: center;
+        margin-bottom: 48px;
+    }
+
+    .recipes-wrapper svg {
+        display: none;
+    }
+
+    .recipes img {
+        width: 331px;
+        border-radius: 40px;
+    }
+
+    .recipes-title {
+        font-weight: 800;
+        font-size: 44px;
+        line-height: 114%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        text-align: center;
+        color: var(--dark-blue);
+    }
+}
+

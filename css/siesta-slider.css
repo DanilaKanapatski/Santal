@@ -550,3 +550,140 @@
         right: 25%;
     }
 }
+
+@media screen and (max-width: 399px) {
+    .siesta-slider {
+        position: relative;
+    }
+
+    .siesta__decor {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;        /* не блокируют клики по слайдеру */
+        z-index: 0;
+    }
+
+    /* Каждый слой занимает весь блок, но виден только активный */
+    .siesta__decor-layer {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    /* Когда data-page секции совпадает с data-for-page слоя — показываем */
+    .siesta-slider[data-page="0"] .siesta__decor-layer[data-for-page="0"],
+    .siesta-slider[data-page="1"] .siesta__decor-layer[data-for-page="1"],
+    .siesta-slider[data-page="2"] .siesta__decor-layer[data-for-page="2"] {
+        opacity: 1;
+    }
+
+    /* Слайдер поверх декора */
+
+
+    /* Позиции конкретных фруктов */
+    .siesta__deco { display: none }
+    /* и т.д. для каждого */
+
+    /* === Слайдер === */
+    .siesta-slider-flavors {
+        position: relative;
+        padding: 0 0 78px;
+        max-width: 294px;
+        margin: 0 auto;
+    }
+
+    .siesta-slider-flavors__viewport {
+        overflow: hidden;
+    }
+
+    .siesta-slider-flavors__track {
+        display: flex;
+        gap: 28px;
+        transition: transform 0.5s ease;
+        will-change: transform;
+        margin-bottom: 25px;
+    }
+
+    /* Карточка вкуса. flex-basis вычисляется через CSS-переменную --per-view */
+    .siesta-slider-flavor {
+        /* ширина одной карточки = (100% - суммарные гэпы) / кол-во видимых */
+        flex: 0 0 calc((100% - (var(--per-view) - 1) * 28px) / var(--per-view));
+        min-width: 0;
+        text-align: center;
+    }
+
+    .siesta-slider-flavor__image {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .siesta-slider-flavor__name {
+        width: 304px;
+        margin-top: 16px;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 110%;
+        text-align: center;
+        color: var(--dark-blue);
+    }
+
+    .siesta-slider-flavor__btn {
+        margin: 12px auto 0;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 114%;
+        color: #1b4332;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 262px;
+        height: 64px;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        border-radius: 100px;
+
+        background-image: linear-gradient(
+                180deg,
+                rgba(253, 89, 2, 0.18) 0%,
+                rgba(255, 255, 255, 0.75) 100%
+        );
+
+        box-shadow:
+                inset 0 1px 6px 0 rgba(255, 255, 255, 0.7),
+                0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    }
+
+    /* Стрелки */
+    .siesta-slider-flavors__btn {
+        position: absolute;
+        top: auto;
+        transform: none;
+        bottom: 23px;
+        width: 75px;
+        height: 75px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+        z-index: 2;
+    }
+
+    .siesta-slider-flavors__btn svg {
+        width: 75px;
+        height: 75px;
+    }
+
+    .siesta-slider-flavors__btn--prev {
+        left: 25%;
+    }
+
+    .siesta-slider-flavors__btn--next {
+        right: 25%;
+    }
+}
