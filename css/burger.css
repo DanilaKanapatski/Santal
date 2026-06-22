@@ -91,8 +91,6 @@
     .hero__logo {
         position: absolute;
         left: 50%;
-        width: 262px;
-        height: 234px;
         top: 50%;
         transform: translate(-50%, -50%);
     }
@@ -121,10 +119,57 @@
     .hero__logo {
         position: absolute;
         left: 50%;
-        width: 327px;
-        height: 293px;
+
         top: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    /* Скрываем десктоп-навигацию */
+    .hero__nav {
+        display: none;
+    }
+
+    /* Показываем бургер справа */
+    .burger {
+        display: block;
+        margin-left: auto;
+    }
+
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 44px;
+        text-align: center;
+    }
+
+    .mobile-menu a {
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 114%;
+        text-align: center;
+        color: var(--dark-blue);
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 487px) {
+    .hero__header {
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+        padding: 13px 12px;
+    }
+
+    /* Лого по центру */
+    .hero__logo {
+        position: absolute;
+        left: 0;
+
+        top: 0;
+        transform: translate(0, 0);
     }
 
     /* Скрываем десктоп-навигацию */

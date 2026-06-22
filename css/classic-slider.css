@@ -395,3 +395,135 @@
         right: 0;
     }
 }
+
+@media screen and (max-width: 487px) {
+    .classic-slider {
+        position: relative;
+    }
+
+    .classic__decor {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;        /* не блокируют клики по слайдеру */
+        z-index: 0;
+    }
+
+    /* Каждый слой занимает весь блок, но виден только активный */
+    .classic__decor-layer {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    /* Когда data-page секции совпадает с data-for-page слоя — показываем */
+    .classic-slider[data-page="0"] .classic__decor-layer[data-for-page="0"],
+    .classic-slider[data-page="1"] .classic__decor-layer[data-for-page="1"],
+    .classic-slider[data-page="2"] .classic__decor-layer[data-for-page="2"] {
+        opacity: 1;
+    }
+
+    /* Слайдер поверх декора */
+
+
+    /* Позиции конкретных фруктов */
+    .classic__deco { display: none }
+
+    /* и т.д. для каждого */
+
+    /* === Слайдер === */
+    .classic-slider-flavors {
+        position: relative;
+        padding: 24px 0 102px;
+        max-width: 294px;
+        margin: 0 auto;
+    }
+
+    .classic-slider-flavors__viewport {
+        overflow: hidden;
+    }
+
+    .classic-slider-flavors__track {
+        display: flex;
+        gap: 27px;
+        transition: transform 0.5s ease;
+        will-change: transform;
+        margin-bottom: 25px;
+    }
+
+    /* Карточка вкуса. flex-basis вычисляется через CSS-переменную --per-view */
+    .classic-slider-flavor {
+        /* ширина одной карточки = (100% - суммарные гэпы) / кол-во видимых */
+        flex: 0 0 calc((100% - (var(--per-view) - 1) * 27px) / var(--per-view));
+        min-width: 0;
+        text-align: center;
+    }
+
+    .classic-slider-flavor__image {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .classic-slider-flavor__name {
+        margin-top: 16px;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 110%;
+        text-align: center;
+        color: var(--dark-blue);
+    }
+
+    .classic-slider-flavor__btn {
+        margin: 12px auto 0;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 114%;
+        color: #1b4332;
+        display: flex;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 100px;
+        width: 228px;
+        height: 64px;
+        backdrop-filter: blur(20px);
+        box-shadow: inset 0 1px 6px 0 rgba(255, 255, 255, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
+        background: rgba(255, 255, 255, 0.1) linear-gradient(180deg, rgba(253, 89, 2, 0.15) 0%, rgba(67, 115, 46, 0.15) 100%);
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Стрелки */
+    .classic-slider-flavors__btn {
+        position: absolute;
+        top: auto;
+        transform: none;
+        bottom: 23px;
+        width: 75px;
+        height: 75px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+        z-index: 2;
+    }
+
+
+    .classic-slider-flavors__btn svg {
+        width: 75px;
+        height: 75px;
+    }
+
+    .classic-slider-flavors__btn--prev {
+        left: 25%;
+    }
+
+    .classic-slider-flavors__btn--next {
+        right: 25%;
+    }
+}
+

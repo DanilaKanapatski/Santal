@@ -203,3 +203,51 @@
         display: none;
     }
 }
+
+@media screen and (max-width: 487px) {
+    .siesta {
+        padding: 45px 0 45px 0;
+        position: relative;
+    }
+
+    .siesta-img {
+        display: none;
+    }
+
+    .siesta-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 52px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .siesta-wrapper img {
+        width: 371px;
+    }
+
+    .siesta-title {
+        margin: 0 auto;
+        max-width: 220px;
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 106%;
+        text-align: center;
+        color: #dc3755;
+    }
+
+    .siesta-desc {
+        margin-top: 22px;
+        max-width: 387px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 114%;
+        text-align: center;
+        color: var(--dark-blue);
+    }
+
+    .siesta-btn {
+        display: none;
+    }
+}
+

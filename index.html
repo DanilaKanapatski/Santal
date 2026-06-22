@@ -28,7 +28,27 @@
 <main>
     <section class="hero">
         <header class="hero__header">
-            <img src="assets/images/logo.png" class="hero__logo" alt="Santal">
+            <picture>
+
+                <source
+                        media="(max-width: 487px)"
+                        srcset="assets/images/logo-3.png"
+                        type="image/png">
+                <source
+                        media="(max-width: 767px)"
+                        srcset="assets/images/logo-2.png"
+                        type="image/png">
+
+                <!-- Для десктопов (769px - 1024px) -->
+                <source
+                        media="(max-width: 1200px)"
+                        srcset="assets/images/logo-1.png"
+                        type="image/png">
+
+                <!-- Для больших экранов (>1024px) - fallback -->
+                <img src="assets/images/logo.png" class="hero__logo" alt="Santal">
+            </picture>
+
             <nav class="hero__nav">
                 <ul>
                     <li>
@@ -68,6 +88,10 @@
         <!-- Проигрыватель: база + крутящаяся пластинка -->
         <div class="hero__player">
             <picture>
+                <source
+                        media="(max-width: 487px)"
+                        srcset="assets/images/main-5.png"
+                        type="image/png">
                 <!-- Для мобильных устройств (до 480px) -->
                 <source
                         media="(max-width: 767px)"
