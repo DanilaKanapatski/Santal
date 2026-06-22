@@ -521,6 +521,14 @@
         display: none;
     }
 
+    .max {
+        max-width: 310px;
+    }
+
+    .max2 {
+        max-width: 250px;
+    }
+
     .tablet {
         display: block;
         margin-top: 12px;
