@@ -132,7 +132,7 @@
     .classic__deco--pineapple-r { right: -247px; top: -334px; }
     .classic__deco--mango-r     { right: -178px;     bottom: 1px }
     .classic__deco--pineapple2-l     { left: -106px;     top: 16px }
-    .classic__deco--apple-r     { right: -170px;     bottom: -34px }
+    .classic__deco--apple-r     { right: -170px;     bottom: -4px }
 
 }
 
@@ -266,7 +266,7 @@
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 769px) {
     .classic-slider {
         position: relative;
     }

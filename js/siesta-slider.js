@@ -19,9 +19,11 @@
 
     function update() {
         const pv = perView();
-        const max = totalPages() - 1;
-        if (page > max) page = max;
-        if (page < 0) page = 0;
+        const total = totalPages();
+
+        // БЕСКОНЕЧНАЯ ПРОКРУТКА: зацикливаем страницы
+        if (page >= total) page = 0;
+        if (page < 0) page = total - 1;
 
         // Сдвигаем на page страниц. Каждая страница = pv карточек.
         // Учитываем gap между карточками (24px) — для точного смещения берём ширину viewport.
@@ -35,16 +37,17 @@
         const section = root.closest('.siesta-slider');
         if (section) section.dataset.page = page;
 
-        prevBtn.disabled = page === 0;
-        nextBtn.disabled = page >= max;
+        // БЕСКОНЕЧНЫЙ РЕЖИМ: кнопки всегда активны
+        prevBtn.disabled = false;
+        nextBtn.disabled = false;
     }
 
     prevBtn.addEventListener('click', () => { page--; update(); });
     nextBtn.addEventListener('click', () => { page++; update(); });
 
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft'  && !prevBtn.disabled) prevBtn.click();
-        if (e.key === 'ArrowRight' && !nextBtn.disabled) nextBtn.click();
+        if (e.key === 'ArrowLeft') prevBtn.click();
+        if (e.key === 'ArrowRight') nextBtn.click();
     });
 
     // При ресайзе пересчитываем (на случай смены --per-view через media-query)

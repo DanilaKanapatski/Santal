@@ -21,7 +21,7 @@
 }
 
 .popup--siesta {
-    background: #fdc8c4;
+    background: rgb(254, 214, 211);
 }
 
 .popup.is-open {
@@ -279,15 +279,20 @@ body.popup-open {
         max-width: 420px;
         width: 100%;
         min-height: 712px;
+        max-height: 90vh;
         border-radius: 32px;
         display: flex;
         gap: 40px;
         align-items: center;
+        flex-direction: column;        /* ← ДОБАВИТЬ! */
         overflow: hidden;
     }
 
-    .popup-body {
-        width: 100%;
+    .popup__body {
+        flex: 1;
+        overflow-y: auto;            /* СКРОЛЛ внутри карточки */
+        scrollbar-width: thin;
+        -webkit-overflow-scrolling: touch; /* Плавный скролл на iOS */
     }
 
     /* Цвета фона по типу слайдера (значения взяты из Figma) */
@@ -334,6 +339,7 @@ body.popup-open {
     }
 
     .popup__content {
+        flex-shrink: 0;
         margin-top: 391px;
         position: relative;
         z-index: 3;
@@ -440,7 +446,6 @@ body.popup-open {
         position: relative;
         max-width: 400px;
         width: 100%;
-        min-height: 712px;
         border-radius: 22px;
         display: flex;
         gap: 40px;
@@ -602,7 +607,6 @@ body.popup-open {
         position: relative;
         max-width: 360px;
         width: 100%;
-        min-height: 712px;
         border-radius: 12px;
         display: flex;
         gap: 40px;

@@ -37,7 +37,7 @@
 }
 
 /* --- Мобилка: 488px и ниже — по 1 карточке + стрелки снизу --- */
-@media (max-width: 767px) {
+@media (max-width: 769px) {
     #classic-slider,
     #siesta-slider {
         --per-view: 1 !important;

@@ -1,3 +1,7 @@
+.tablet {
+    display: none;
+}
+
 .drinks-title {
     padding: 38px 0;
     margin: 0 auto;
@@ -508,9 +512,23 @@
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 769px) {
     .drinks-title {
       display: none;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    .tablet {
+        display: block;
+        margin-top: 12px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 114%;
+        color: var(--dark-blue);
+        max-width: 365px;
     }
 
     .drinks {
