@@ -148,7 +148,7 @@
 
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 767px) {
     .about {
         padding: 42px 0 42px;
         position: relative;

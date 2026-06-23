@@ -375,7 +375,7 @@
     .drinks-slider {
         position: relative;
         z-index: 1;
-        max-width: 768px;
+        max-width: 767px;
         margin: 0 auto;
     }
 
@@ -512,7 +512,7 @@
     }
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 767px) {
     .drinks-title {
       display: none;
     }

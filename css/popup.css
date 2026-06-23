@@ -21,7 +21,7 @@
 }
 
 .popup--siesta {
-    background: rgb(254, 214, 211);
+    background: rgba(254, 214, 211, 0.72);
 }
 
 .popup.is-open {
@@ -249,7 +249,7 @@ body.popup-open {
 
 
 /* Адаптив */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .popup {
         position: fixed;
         inset: 0;
@@ -257,6 +257,8 @@ body.popup-open {
         align-items: center;
         justify-content: center;
         z-index: 1000;
+        /* Отступы сверху/снизу, чтобы попап не прижимался к краям экрана */
+        padding: 20px 0;
     }
 
     .popup--classic {
@@ -273,74 +275,97 @@ body.popup-open {
         justify-content: center;
     }
 
-    /* Карточка попапа */
+    /* Карточка попапа: высота от экрана, контент скроллится внутри */
     .popup__card {
         position: relative;
         max-width: 420px;
         width: 100%;
-        min-height: 712px;
+        min-height: 0;                           /* убираем фиксированную высоту */
+        max-height: calc(100vh - 40px);
+        max-height: calc(100dvh - 40px);
         border-radius: 32px;
         display: flex;
-        gap: 40px;
-        align-items: center;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
         overflow: hidden;
     }
 
-    .popup-body {
-        width: 100%;
-    }
-
-    /* Цвета фона по типу слайдера (значения взяты из Figma) */
+    /* Цвета фона */
     .popup--siesta .popup__card {
         background: linear-gradient(180deg, #fdc9c3 0%, #ffc17e 100%);
     }
-
     .popup--classic .popup__card {
         background: linear-gradient(180deg, #fdc9c3 0%, #ffc17e 100%);
     }
 
-    /* Крестик закрытия */
+    /* Тело попапа — скроллируемая область с вертикальными отступами,
+       чтобы крестик сверху был виден и контент не прижимался ко дну */
+    .popup__body {
+        flex: 1 1 auto;
+        width: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+        /* ВАЖНО: верх и низ внутри скроллируемой области */
+    }
+
+    .popup__body::-webkit-scrollbar { width: 4px; }
+    .popup__body::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 4px;
+    }
+    .popup__body::-webkit-scrollbar-track { background: transparent; }
+
+    /* Крестик: «прилипает» сверху над скроллом, заметный круглый фон */
     .popup__close {
         position: absolute;
         top: 18px;
         right: 21px;
-        width: 20px;
-        height: 20px;
-        background: none;
+        width: 21px;
+        height: 21px;
         border: none;
         cursor: pointer;
         padding: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 3;
+        z-index: 10;             /* над всем содержимым тела */
     }
-
     .popup__close svg {
-        width: 20px;
-        height: 20px;
+        width: 21px;
+        height: 21px;
     }
 
-    /* Контент попапа — двухколоночная раскладка */
+    /* Картинка: в обычном потоке, не накладывается на текст */
     .popup__image {
-        position: absolute;
-        top: 0;
-        right: auto;
-    }
-
-    .popup__image img {
-        /*height: 309px;*/
-
-    }
-
-    .popup__content {
-        margin-top: 391px;
         position: relative;
-        z-index: 3;
+        top: auto;
+        right: auto;
+        width: 100%;
+        margin-top: 0;
         display: flex;
-        justify-content: normal;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .popup__image img,
+    .popup__image picture,
+    .popup__image picture img {
+        height: auto;
+        display: block;
+    }
+
+    /* Контент тоже в обычном потоке */
+    .popup__content {
+        margin-top: -220px;
+        position: relative;
+        z-index: 1;
+        display: flex;
         flex-direction: column;
-        padding-left: 29px;
+        padding: 0 29px;
     }
 
     .popup__title {
@@ -413,97 +438,25 @@ body.popup-open {
 
 @media (max-width: 487px) {
     .popup {
-        position: fixed;
-        inset: 0;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
+        padding: 20px 0;
     }
 
-    .popup--classic {
-        background: rgba(211, 220, 90, 0.8);
-    }
-
-    .popup--siesta {
-        background: rgba(211, 220, 90, 0.8);
-    }
-
-    .popup.is-open {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /* Карточка попапа */
     .popup__card {
-        position: relative;
         max-width: 400px;
         width: 100%;
-        min-height: 712px;
+        max-height: calc(100vh - 40px);
+        max-height: calc(100dvh - 40px);
         border-radius: 22px;
-        display: flex;
-        gap: 40px;
-        align-items: center;
-        overflow: hidden;
     }
 
-    .popup-body {
-        width: 100%;
+    .popup__body {
     }
 
-    /* Цвета фона по типу слайдера (значения взяты из Figma) */
-    .popup--siesta .popup__card {
-        background: linear-gradient(180deg, #fdc9c3 0%, #ffc17e 100%);
-    }
 
-    .popup--classic .popup__card {
-        background: linear-gradient(180deg, #fdc9c3 0%, #ffc17e 100%);
-    }
 
-    /* Крестик закрытия */
-    .popup__close {
-        position: absolute;
-        top: 16px;
-        right: 19px;
-        width: 24px;
-        height: 24px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 3;
-    }
+    /* Картинка и контент уже в потоке (унаследовано от 767px),
+       тут только тонкая настройка типографики */
 
-    .popup__close svg {
-        width: 24px;
-        height: 24px;
-    }
-
-    /* Контент попапа — двухколоночная раскладка */
-    .popup__image {
-        position: absolute;
-        top: 0;
-        right: auto;
-    }
-
-    .popup__image img {
-        /*height: 309px;*/
-
-    }
-
-    .popup__content {
-        margin-top: 391px;
-        position: relative;
-        z-index: 3;
-        display: flex;
-        justify-content: normal;
-        flex-direction: column;
-        padding-left: 29px;
-    }
 
     .popup__title {
         font-weight: 700;
@@ -570,106 +523,27 @@ body.popup-open {
         border-radius: 100px;
         width: 275px;
         height: 75px;
+        flex-shrink: 0;
     }
 }
 
 @media (max-width: 399px) {
     .popup {
-        position: fixed;
-        inset: 0;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        z-index: 1000;
+        padding: 20px 0;
     }
 
-    .popup--classic {
-        background: rgba(211, 220, 90, 0.8);
-    }
-
-    .popup--siesta {
-        background: rgba(211, 220, 90, 0.8);
-    }
-
-    .popup.is-open {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    /* Карточка попапа */
     .popup__card {
-        position: relative;
         max-width: 360px;
         width: 100%;
-        min-height: 712px;
-        border-radius: 12px;
-        display: flex;
-        gap: 40px;
-        align-items: center;
-        overflow: hidden;
+        max-height: calc(100vh - 40px);
+        max-height: calc(100dvh - 40px);
+        border-radius: 16px;
     }
 
-    .popup-body {
-        width: 100%;
-    }
-
-    /* Цвета фона по типу слайдера (значения взяты из Figma) */
-    .popup--siesta .popup__card {
-        background: linear-gradient(180deg, #fdc9c3 0%, #ffc17e 100%);
-    }
-
-    .popup--classic .popup__card {
-        background: linear-gradient(180deg, #fdc9c3 0%, #ffc17e 100%);
-    }
-
-    /* Крестик закрытия */
-    .popup__close {
-        position: absolute;
-        top: 18px;
-        right: 21px;
-        width: 21px;
-        height: 21px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 3;
-    }
-
-    .popup__close svg {
-        width: 21px;
-        height: 21px;
-    }
-
-    /* Контент попапа — двухколоночная раскладка */
-    .popup__image {
-        position: absolute;
-        top: 0;
-        right: auto;
-    }
-
-    .popup__image img {
-        /*height: 309px;*/
-
-    }
-
-    .popup__content {
-        margin-top: 391px;
-        position: relative;
-        z-index: 3;
-        display: flex;
-        justify-content: normal;
-        flex-direction: column;
-        padding-left: 29px;
-    }
 
     .popup__title {
         font-weight: 700;
-        font-size: 24px;
+        font-size: 22px;
         line-height: 110%;
         color: var(--dark-blue);
     }
@@ -732,5 +606,6 @@ body.popup-open {
         border-radius: 100px;
         width: 275px;
         height: 75px;
+        flex-shrink: 0;
     }
 }

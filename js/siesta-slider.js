@@ -1,43 +1,39 @@
+/* ============================================================
+   Слайдер «Siesta»
+   - бесконечный
+   - стрелки + клавиши + СВАЙП/DRAG (мышь и палец)
+   ============================================================ */
 (function () {
     const root    = document.getElementById('siesta-slider');
     const track   = document.getElementById('siesta-slider-track');
     const prevBtn = document.getElementById('siesta-slider-prevBtn');
     const nextBtn = document.getElementById('siesta-slider-nextBtn');
     const slides  = track.children;
+    const viewport = track.parentElement;
 
-    // Берём актуальное количество видимых карточек из CSS-переменной
     function perView() {
         const v = getComputedStyle(root).getPropertyValue('--per-view').trim();
         return Math.max(1, parseInt(v, 10) || 1);
     }
 
-    let page = 0; // номер текущей «страницы» (группы карточек)
+    let page = 0;
 
     function totalPages() {
         return Math.ceil(slides.length / perView());
     }
 
     function update() {
-        const pv = perView();
         const total = totalPages();
-
-        // БЕСКОНЕЧНАЯ ПРОКРУТКА: зацикливаем страницы
         if (page >= total) page = 0;
         if (page < 0) page = total - 1;
 
-        // Сдвигаем на page страниц. Каждая страница = pv карточек.
-        // Учитываем gap между карточками (24px) — для точного смещения берём ширину viewport.
-        const viewport = track.parentElement;
+        track.style.transition = 'transform 0.5s ease';
         const offset = page * viewport.clientWidth;
-        // gap внутри страницы: после последней карточки страницы нужен ещё один gap,
-        // чтобы следующая страница начиналась с края — добавим page * 24px
         track.style.transform = `translateX(-${offset + page * 28}px)`;
 
-        // НОВОЕ: переключаем декорации
         const section = root.closest('.siesta-slider');
         if (section) section.dataset.page = page;
 
-        // БЕСКОНЕЧНЫЙ РЕЖИМ: кнопки всегда активны
         prevBtn.disabled = false;
         nextBtn.disabled = false;
     }
@@ -50,8 +46,60 @@
         if (e.key === 'ArrowRight') nextBtn.click();
     });
 
-    // При ресайзе пересчитываем (на случай смены --per-view через media-query)
     window.addEventListener('resize', update);
+
+    /* ========== DRAG / SWIPE ========== */
+    let dragging = false;
+    let startX = 0;
+    let dragDistance = 0;
+    const SWIPE_THRESHOLD = 50;
+    function setJustDragged() {
+        window.__sliderJustDragged = true;
+        setTimeout(() => { window.__sliderJustDragged = false; }, 100);
+    }
+
+    function dragStart(e) {
+        if (e.target.closest('a, button')) return;
+        dragging = true;
+        startX = (e.touches ? e.touches[0].clientX : e.clientX);
+        dragDistance = 0;
+        track.style.transition = 'none';
+        viewport.style.cursor = 'grabbing';
+    }
+
+    function dragMove(e) {
+        if (!dragging) return;
+        const x = (e.touches ? e.touches[0].clientX : e.clientX);
+        dragDistance = x - startX;
+        const baseOffset = -(page * viewport.clientWidth + page * 28);
+        track.style.transform = `translateX(${baseOffset + dragDistance}px)`;
+        if (e.cancelable && !e.touches) e.preventDefault();
+    }
+
+    function dragEnd() {
+        if (!dragging) return;
+        dragging = false;
+        viewport.style.cursor = '';
+        const moved = Math.abs(dragDistance);
+        if (moved > SWIPE_THRESHOLD) {
+            setJustDragged();
+            if (dragDistance > 0) page--; else page++;
+        }
+        update();
+    }
+
+    viewport.addEventListener('mousedown', dragStart);
+    window.addEventListener('mousemove', dragMove);
+    window.addEventListener('mouseup', dragEnd);
+    window.addEventListener('mouseleave', dragEnd);
+
+    viewport.addEventListener('touchstart', dragStart, { passive: true });
+    viewport.addEventListener('touchmove', dragMove, { passive: true });
+    viewport.addEventListener('touchend', dragEnd);
+    viewport.addEventListener('touchcancel', dragEnd);
+
+    viewport.style.cursor = 'grab';
+    viewport.style.userSelect = 'none';
 
     update();
 })();

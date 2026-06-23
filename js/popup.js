@@ -1,35 +1,26 @@
 /* ============================================================
-   ПУНКТ 2 — Логика попапа
-   ============================================================
-   Принцип: у каждой карточки слайдера есть шаблон <template>
-   с готовым содержимым попапа. При клике на «подробнее о вкусе»
-   JS берёт шаблон карточки, вставляет в попап и открывает его.
-
-   Слайдер определяется по родительскому классу:
-   - .siesta-slider     -> попап с розовым фоном
-   - .classic-slider    -> попап с жёлтым фоном
-*/
-
+   Попап «подробнее о вкусе»
+   - открывается по клику на ВСЮ карточку (а не только на кнопку)
+   - игнорирует клик, если только что был свайп (флаг __sliderJustDragged)
+   - кнопка «смотреть рецепт» внутри попапа уводит на конкретный
+     рецепт (data-recipe="N") через window.drinksSliderGoTo
+   ============================================================ */
 (function () {
-    const popup       = document.getElementById('popup');
+    const popup     = document.getElementById('popup');
     if (!popup) return;
 
-    const popupCard   = popup.querySelector('.popup__card');
-    const popupBody   = popup.querySelector('.popup__body');
-    const closeBtn    = popup.querySelector('.popup__close');
+    const popupBody = popup.querySelector('.popup__body');
+    const closeBtn  = popup.querySelector('.popup__close');
 
     function open(card, type) {
-        // Сбрасываем тип и ставим новый: classic / siesta
         popup.classList.remove('popup--classic', 'popup--siesta');
         popup.classList.add('popup--' + type);
 
-        // Берём шаблон содержимого попапа из карточки
         const template = card.querySelector('template.popup-content');
         if (template) {
             popupBody.innerHTML = '';
             popupBody.appendChild(template.content.cloneNode(true));
         } else {
-            // Фоллбек, если шаблона ещё нет — берём базовое название
             const name = card.querySelector(
                 '.classic-slider-flavor__name, .siesta-slider-flavor__name'
             );
@@ -40,6 +31,8 @@
 
         popup.classList.add('is-open');
         document.body.classList.add('popup-open');
+        // сбрасываем скролл внутри тела попапа в начало
+        if (popupBody) popupBody.scrollTop = 0;
     }
 
     function close() {
@@ -47,29 +40,69 @@
         document.body.classList.remove('popup-open');
     }
 
-    // Делегирование клика — ловим все кнопки «подробнее о вкусе»
+    /* Открытие: клик по любой части карточки. Старая кнопка
+       «подробнее о вкусе» тоже сюда попадает — она внутри карточки. */
     document.addEventListener('click', function (e) {
-        const btn = e.target.closest(
-            '.classic-slider-flavor__btn, .siesta-slider-flavor__btn'
+        // не открывать попап, если это был свайп слайдера
+        if (window.__sliderJustDragged) return;
+
+        // клик внутри уже открытого попапа — обрабатываем отдельно ниже
+        if (e.target.closest('.popup')) return;
+
+        const card = e.target.closest(
+            '.classic-slider-flavor, .siesta-slider-flavor'
         );
-        if (!btn) return;
+        if (!card) return;
 
         e.preventDefault();
 
-        const card = btn.closest('.classic-slider-flavor, .siesta-slider-flavor');
-        if (!card) return;
-
-        // Определяем тип слайдера по родителю
-        const isSiesta = !!btn.closest('.siesta-slider');
+        const isSiesta = !!card.closest('.siesta-slider');
         open(card, isSiesta ? 'siesta' : 'classic');
     });
 
-    // Закрытие: крестик, клик по подложке, Escape
+    /* Кнопка «смотреть рецепт» в попапе */
+    popup.addEventListener('click', function (e) {
+        const cta = e.target.closest('.popup__cta');
+        if (!cta) return;
+
+        const recipeIdx = parseInt(cta.dataset.recipe, 10);
+        e.preventDefault();
+        close();
+
+        // переключаем слайдер рецептов на нужный
+        if (!isNaN(recipeIdx) && typeof window.drinksSliderGoTo === 'function') {
+            window.drinksSliderGoTo(recipeIdx);
+        }
+        // прокручиваем к самому слайдеру с напитками (а не к заголовку #recipes),
+        // даём слайдеру кадр на пересчёт высоты после goTo
+        requestAnimationFrame(() => {
+            const target = document.querySelector('.drinks')
+                        || document.getElementById('recipes');
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    /* Закрытие: крестик, клик по подложке, Escape */
     closeBtn.addEventListener('click', close);
     popup.addEventListener('click', function (e) {
         if (e.target === popup) close();
     });
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && popup.classList.contains('is-open')) close();
+    });
+
+    /* Доступность: курсор-указатель и keyboard-доступность для всей карточки */
+    document.querySelectorAll('.classic-slider-flavor, .siesta-slider-flavor').forEach(card => {
+        card.style.cursor = 'pointer';
+        if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                card.click();
+            }
+        });
     });
 })();

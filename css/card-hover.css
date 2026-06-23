@@ -1,0 +1,114 @@
+/* ============================================================
+   Появление фруктов при ховере (Mana-style)
+   ============================================================
+   САМИ КАРТОЧКИ НЕ ТРОГАЕМ — никакого зума, лифта, свечения.
+   Просто рядом с пачкой сока «вылетают» фрукты при наведении.
+
+   Как пользоваться:
+   В нужную карточку добавляешь контейнер с PNG-фруктами:
+
+     <article class="siesta-slider-flavor">
+       <div class="siesta-slider-flavor__decor" aria-hidden="true">
+         <img class="flavor-fruit-1" src="assets/images/fruit-A.png" alt="">
+         <img class="flavor-fruit-2" src="assets/images/fruit-B.png" alt="">
+         <img class="flavor-fruit-3" src="assets/images/fruit-C.png" alt="">
+       </div>
+       <div class="siesta-slider-flavor__image">...</div>
+       ...
+     </article>
+
+   Фрукты — PNG с прозрачным фоном.
+   ============================================================ */
+
+.classic-slider-flavor,
+.siesta-slider-flavor {
+    position: relative;
+    overflow: visible;
+    cursor: pointer;
+}
+
+/* Контейнер фруктов — на всю высоту карточки, за пачкой по z-index. */
+.classic-slider-flavor__decor,
+.siesta-slider-flavor__decor {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Сама пачка сока должна быть НАД фруктами */
+.classic-slider-flavor__image,
+.siesta-slider-flavor__image {
+    position: relative;
+    z-index: 1;
+}
+
+/* Все фрукты по умолчанию спрятаны и слегка уменьшены/сдвинуты в центр */
+.classic-slider-flavor__decor img,
+.siesta-slider-flavor__decor img {
+    position: absolute;
+    opacity: 0;
+    transform: translate(0, 0) scale(0.6) rotate(0deg);
+    transition:
+        opacity 0.4s ease,
+        transform 0.55s cubic-bezier(.2,.7,.3,1.3);
+    will-change: transform, opacity;
+}
+
+/* Стартовые позиции фруктов вокруг пачки сока.
+   Цифра в классе — порядковый номер, можешь использовать
+   любое количество (стилизуй .flavor-fruit-1..6 по желанию). */
+.flavor-fruit-1 { top: 6%;    left: -6%;   width: 110px; }
+.flavor-fruit-2 { top: 10%;   right: -8%;  width: 95px;  }
+.flavor-fruit-3 { top: 42%;   left: -12%;  width: 90px;  }
+.flavor-fruit-4 { top: 38%;   right: -12%; width: 100px; }
+.flavor-fruit-5 { bottom: 22%; left: -4%;   width: 80px;  }
+.flavor-fruit-6 { bottom: 26%; right: -6%;  width: 90px;  }
+
+/* Появление при ховере: фрукты выезжают в стороны от пачки */
+.classic-slider-flavor:hover .flavor-fruit-1,
+.siesta-slider-flavor:hover .flavor-fruit-1 {
+    opacity: 1;
+    transform: translate(-14px, -12px) scale(1) rotate(-12deg);
+}
+.classic-slider-flavor:hover .flavor-fruit-2,
+.siesta-slider-flavor:hover .flavor-fruit-2 {
+    opacity: 1;
+    transform: translate(16px, -10px) scale(1) rotate(10deg);
+}
+.classic-slider-flavor:hover .flavor-fruit-3,
+.siesta-slider-flavor:hover .flavor-fruit-3 {
+    opacity: 1;
+    transform: translate(-18px, 0) scale(1) rotate(-8deg);
+}
+.classic-slider-flavor:hover .flavor-fruit-4,
+.siesta-slider-flavor:hover .flavor-fruit-4 {
+    opacity: 1;
+    transform: translate(18px, 0) scale(1) rotate(8deg);
+}
+.classic-slider-flavor:hover .flavor-fruit-5,
+.siesta-slider-flavor:hover .flavor-fruit-5 {
+    opacity: 1;
+    transform: translate(-12px, 14px) scale(1) rotate(6deg);
+}
+.classic-slider-flavor:hover .flavor-fruit-6,
+.siesta-slider-flavor:hover .flavor-fruit-6 {
+    opacity: 1;
+    transform: translate(14px, 12px) scale(1) rotate(-6deg);
+}
+
+/* Touch-устройства: hover не работает, состояние сразу скрытое */
+@media (hover: none) {
+    .classic-slider-flavor__decor img,
+    .siesta-slider-flavor__decor img {
+        opacity: 0 !important;
+        transform: translate(0, 0) scale(0.6) !important;
+    }
+}
+
+/* На узких экранах фрукты поменьше */
+@media (max-width: 767px) {
+    .flavor-fruit-1, .flavor-fruit-2,
+    .flavor-fruit-3, .flavor-fruit-4,
+    .flavor-fruit-5, .flavor-fruit-6 { width: 70px; }
+}

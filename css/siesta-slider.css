@@ -180,7 +180,7 @@
     .siesta-slider-flavors {
         position: relative;
         padding: 38px 72px 53px;
-        max-width: 768px;
+        max-width: 767px;
         margin: 0 auto;
     }
 
@@ -278,7 +278,7 @@
     }
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 767px) {
     .siesta-slider {
         position: relative;
     }

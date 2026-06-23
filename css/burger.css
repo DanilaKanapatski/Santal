@@ -107,7 +107,7 @@
     }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 767px) {
     .hero__header {
         position: relative;
         justify-content: space-between;

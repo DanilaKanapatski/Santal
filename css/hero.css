@@ -273,7 +273,7 @@
     }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 767px) {
     .hero {
         position: relative;
         overflow: hidden;
@@ -538,3 +538,87 @@
     }
 }
 
+
+/* ============================================================
+   Крутящийся апельсин на проигрывателе
+   ============================================================
+   Кладём апельсин-картинку поверх основного изображения player'а.
+   Позиция и размер тонко настраиваются CSS-переменными ниже —
+   если нужно, переопределите их в нужном медиа-запросе.
+
+   ПРЕДПОЛАГАЕТСЯ ассет: assets/images/player-orange.png
+   (PNG c прозрачным фоном, идеально круглый апельсин).
+   Если файла нет — onerror в HTML скроет элемент.
+   ============================================================ */
+
+.hero__player {
+    /* размер и положение апельсина относительно блока player'а */
+    --orange-size: 72%;
+    --orange-top: 11%;
+    --orange-left: 7%;
+    --spin-duration: 8s;
+}
+
+.hero__player-orange {
+    position: absolute;
+    top: var(--orange-top);
+    left: var(--orange-left);
+    width: var(--orange-size);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    border-radius: 50%;
+    z-index: 3; /* над .hero__player-vinyl */
+    pointer-events: none;
+    transform-origin: 50% 50%;
+    animation: hero-orange-spin var(--spin-duration) linear infinite;
+    will-change: transform;
+}
+
+.hero__player-part {
+    position: absolute;
+    top: 3%;
+    right: 4%;
+    z-index: 20;
+    width: 88%;
+}
+
+@keyframes hero-orange-spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+/* Уважение к настройкам системы — отключаем анимацию,
+   если пользователь не любит лишнего движения. */
+@media (prefers-reduced-motion: reduce) {
+    .hero__player-orange {
+        animation: none;
+    }
+}
+
+/* ============================================================
+   ТОНКАЯ ПОДСТРОЙКА ПО БРЕЙКПОИНТАМ
+   ============================================================
+   Если апельсин сидит не точно по центру «пластинки» — поправь
+   значения --orange-top / --orange-left / --orange-size в нужном
+   медиа-запросе ниже. Это удобно делать в DevTools, а потом
+   перенести сюда.
+
+   Значения подобраны под main-1.png (десктоп). Подкорректируй
+   под main-2..6.png если потребуется.
+*/
+@media (max-width: 2299px) { /* main-2 */
+    /*.hero__player { --orange-top: 22%; --orange-left: 22%; --orange-size: 56%; }*/
+}
+@media (max-width: 1200px) { /* main-3 */
+    /*.hero__player { --orange-top: 22%; --orange-left: 22%; --orange-size: 56%; }*/
+}
+@media (max-width: 767px) { /* main-4 */
+    /*.hero__player { --orange-top: 22%; --orange-left: 22%; --orange-size: 56%; }*/
+}
+@media (max-width: 487px) { /* main-5 */
+    /*.hero__player { --orange-top: 22%; --orange-left: 22%; --orange-size: 56%; }*/
+}
+@media (max-width: 399px) { /* main-6 */
+    /*.hero__player { --orange-top: 22%; --orange-left: 22%; --orange-size: 56%; }*/
+}

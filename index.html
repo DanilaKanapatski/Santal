@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/popup.css">
     <link rel="stylesheet" href="css/burger.css">
     <link rel="stylesheet" href="css/sliders-patch.css">
+    <link rel="stylesheet" href="css/card-hover.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,11 +41,11 @@
                         srcset="assets/images/logo-3.png"
                         type="image/png">
                 <source
-                        media="(max-width: 769px)"
+                        media="(max-width: 767px)"
                         srcset="assets/images/logo-2.png"
                         type="image/png">
 
-                <!-- Для десктопов (769px - 1024px) -->
+                <!-- Для десктопов (767px - 1024px) -->
                 <source
                         media="(max-width: 1200px)"
                         srcset="assets/images/logo-1.png"
@@ -104,17 +105,17 @@
                         type="image/png">
                 <!-- Для мобильных устройств (до 480px) -->
                 <source
-                        media="(max-width: 769px)"
+                        media="(max-width: 767px)"
                         srcset="assets/images/main-4.png"
                         type="image/png">
 
-                <!-- Для планшетов (481px - 768px) -->
+                <!-- Для планшетов (481px - 767px) -->
                 <source
                         media="(max-width: 1200px)"
                         srcset="assets/images/main-3.png"
                         type="image/png">
 
-                <!-- Для десктопов (769px - 1024px) -->
+                <!-- Для десктопов (767px - 1024px) -->
                 <source
                         media="(max-width: 2299px)"
                         srcset="assets/images/main-2.png"
@@ -126,6 +127,28 @@
                         class="hero__player-vinyl"
                         alt="Описание изображения">
             </picture>
+
+            <!--
+                Крутящийся апельсин:
+                нужно положить PNG c прозрачным фоном (только апельсин,
+                идеально круглый) по пути assets/images/player-orange.png.
+                Если файла нет — onerror скроет элемент, и проигрыватель
+                останется как раньше.
+                Положение/размер апельсина настраиваются CSS-переменными
+                --orange-top / --orange-left / --orange-size в hero.css.
+            -->
+            <img
+                src="assets/images/player-orange.png"
+                class="hero__player-orange"
+                alt=""
+                aria-hidden="true"
+                onerror="this.style.display='none'">
+            <img
+                    src="assets/images/part-1.png"
+                    class="hero__player-part"
+                    alt=""
+                    aria-hidden="true"
+                    onerror="this.style.display='none'">
         </div>
 
         <!-- Контент -->
@@ -363,7 +386,7 @@
                                     <picture>
                                         <!-- Для мобильных устройств (до 480px) -->
                                         <source
-                                                media="(max-width: 769px)"
+                                                media="(max-width: 767px)"
                                                 srcset="assets/images/popap-1.1.png"
                                                 type="image/png">
 
@@ -387,7 +410,7 @@
                                             <div class="popup__stat-label">Пищевая ценность</div>
                                         </div>
                                     </div>
-                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                    <a href="#recipes" class="popup__cta" data-recipe="2">смотреть рецепт</a>
                                 </div>
                             </template>
                         </article>
@@ -402,7 +425,7 @@
                                     <picture>
                                         <!-- Для мобильных устройств (до 480px) -->
                                         <source
-                                                media="(max-width: 769px)"
+                                                media="(max-width: 767px)"
                                                 srcset="assets/images/popap-2.1.png"
                                                 type="image/png">
 
@@ -426,7 +449,7 @@
                                             <div class="popup__stat-label">Пищевая ценность</div>
                                         </div>
                                     </div>
-                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                    <a href="#recipes" class="popup__cta" data-recipe="1">смотреть рецепт</a>
                                 </div>
                             </template>
 
@@ -442,7 +465,7 @@
                                     <picture>
                                         <!-- Для мобильных устройств (до 480px) -->
                                         <source
-                                                media="(max-width: 769px)"
+                                                media="(max-width: 767px)"
                                                 srcset="assets/images/popap-3.1.png"
                                                 type="image/png">
 
@@ -466,7 +489,7 @@
                                             <div class="popup__stat-label">Пищевая ценность</div>
                                         </div>
                                     </div>
-                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                    <a href="#recipes" class="popup__cta" data-recipe="4">смотреть рецепт</a>
                                 </div>
                             </template>
 
@@ -482,7 +505,7 @@
                                     <picture>
                                         <!-- Для мобильных устройств (до 480px) -->
                                         <source
-                                                media="(max-width: 769px)"
+                                                media="(max-width: 767px)"
                                                 srcset="assets/images/popap-4.1.png"
                                                 type="image/png">
 
@@ -506,7 +529,7 @@
                                             <div class="popup__stat-label">Пищевая ценность</div>
                                         </div>
                                     </div>
-                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                    <a href="#recipes" class="popup__cta" data-recipe="8">смотреть рецепт</a>
                                 </div>
                             </template>
 
@@ -522,7 +545,7 @@
                                     <picture>
                                         <!-- Для мобильных устройств (до 480px) -->
                                         <source
-                                                media="(max-width: 769px)"
+                                                media="(max-width: 767px)"
                                                 srcset="assets/images/popap-5.1.png"
                                                 type="image/png">
 
@@ -546,7 +569,7 @@
                                             <div class="popup__stat-label">Пищевая ценность</div>
                                         </div>
                                     </div>
-                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                    <a href="#recipes" class="popup__cta" data-recipe="0">смотреть рецепт</a>
                                 </div>
                             </template>
 
@@ -562,7 +585,7 @@
                                     <picture>
                                         <!-- Для мобильных устройств (до 480px) -->
                                         <source
-                                                media="(max-width: 769px)"
+                                                media="(max-width: 767px)"
                                                 srcset="assets/images/popap-6.1.png"
                                                 type="image/png">
 
@@ -586,7 +609,7 @@
                                             <div class="popup__stat-label">Пищевая ценность</div>
                                         </div>
                                     </div>
-                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                    <a href="#recipes" class="popup__cta" data-recipe="16">смотреть рецепт</a>
                                 </div>
                             </template>
 
@@ -602,7 +625,7 @@
                                     <picture>
                                         <!-- Для мобильных устройств (до 480px) -->
                                         <source
-                                                media="(max-width: 769px)"
+                                                media="(max-width: 767px)"
                                                 srcset="assets/images/popap-7.1.png"
                                                 type="image/png">
 
@@ -626,7 +649,7 @@
                                             <div class="popup__stat-label">Пищевая ценность</div>
                                         </div>
                                     </div>
-                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                    <a href="#recipes" class="popup__cta" data-recipe="11">смотреть рецепт</a>
                                 </div>
                             </template>
 
@@ -642,7 +665,7 @@
                                     <picture>
                                         <!-- Для мобильных устройств (до 480px) -->
                                         <source
-                                                media="(max-width: 769px)"
+                                                media="(max-width: 767px)"
                                                 srcset="assets/images/popap-8.1.png"
                                                 type="image/png">
 
@@ -666,7 +689,7 @@
                                             <div class="popup__stat-label">Пищевая ценность</div>
                                         </div>
                                     </div>
-                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                    <a href="#recipes" class="popup__cta" data-recipe="3">смотреть рецепт</a>
                                 </div>
                             </template>
 
@@ -682,7 +705,7 @@
                                     <picture>
                                         <!-- Для мобильных устройств (до 480px) -->
                                         <source
-                                                media="(max-width: 769px)"
+                                                media="(max-width: 767px)"
                                                 srcset="assets/images/popap-9.1.png"
                                                 type="image/png">
 
@@ -706,7 +729,7 @@
                                             <div class="popup__stat-label">Пищевая ценность</div>
                                         </div>
                                     </div>
-                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                    <a href="#recipes" class="popup__cta" data-recipe="9">смотреть рецепт</a>
                                 </div>
                             </template>
 
@@ -840,7 +863,7 @@
                                     <picture>
                                         <!-- Для мобильных устройств (до 480px) -->
                                         <source
-                                                media="(max-width: 769px)"
+                                                media="(max-width: 767px)"
                                                 srcset="assets/images/popap-10.1.png"
                                                 type="image/png">
 
@@ -864,7 +887,7 @@
                                             <div class="popup__stat-label">Пищевая ценность</div>
                                         </div>
                                     </div>
-                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                    <a href="#recipes" class="popup__cta" data-recipe="15">смотреть рецепт</a>
                                 </div>
                             </template>
 
@@ -880,7 +903,7 @@
                                     <picture>
                                         <!-- Для мобильных устройств (до 480px) -->
                                         <source
-                                                media="(max-width: 769px)"
+                                                media="(max-width: 767px)"
                                                 srcset="assets/images/popap-11.1.png"
                                                 type="image/png">
 
@@ -904,7 +927,7 @@
                                             <div class="popup__stat-label">Пищевая ценность</div>
                                         </div>
                                     </div>
-                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                    <a href="#recipes" class="popup__cta" data-recipe="14">смотреть рецепт</a>
                                 </div>
                             </template>
 
@@ -920,7 +943,7 @@
                                     <picture>
                                         <!-- Для мобильных устройств (до 480px) -->
                                         <source
-                                                media="(max-width: 769px)"
+                                                media="(max-width: 767px)"
                                                 srcset="assets/images/popap-12.1.png"
                                                 type="image/png">
 
@@ -944,7 +967,7 @@
                                             <div class="popup__stat-label">Пищевая ценность</div>
                                         </div>
                                     </div>
-                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                    <a href="#recipes" class="popup__cta" data-recipe="13">смотреть рецепт</a>
                                 </div>
                             </template>
 
@@ -960,7 +983,7 @@
                                     <picture>
                                         <!-- Для мобильных устройств (до 480px) -->
                                         <source
-                                                media="(max-width: 769px)"
+                                                media="(max-width: 767px)"
                                                 srcset="assets/images/popap-13.1.png"
                                                 type="image/png">
 
@@ -984,7 +1007,7 @@
                                             <div class="popup__stat-label">Пищевая ценность</div>
                                         </div>
                                     </div>
-                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                    <a href="#recipes" class="popup__cta" data-recipe="12">смотреть рецепт</a>
                                 </div>
                             </template>
 
@@ -1000,7 +1023,7 @@
                                     <picture>
                                         <!-- Для мобильных устройств (до 480px) -->
                                         <source
-                                                media="(max-width: 769px)"
+                                                media="(max-width: 767px)"
                                                 srcset="assets/images/popap-14.1.png"
                                                 type="image/png">
 
@@ -1024,7 +1047,7 @@
                                             <div class="popup__stat-label">Пищевая ценность</div>
                                         </div>
                                     </div>
-                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                    <a href="#recipes" class="popup__cta" data-recipe="7">смотреть рецепт</a>
                                 </div>
                             </template>
 
@@ -1040,7 +1063,7 @@
                                     <picture>
                                         <!-- Для мобильных устройств (до 480px) -->
                                         <source
-                                                media="(max-width: 769px)"
+                                                media="(max-width: 767px)"
                                                 srcset="assets/images/popap-15.png"
                                                 type="image/png">
 
@@ -1064,7 +1087,7 @@
                                             <div class="popup__stat-label">Пищевая ценность</div>
                                         </div>
                                     </div>
-                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                    <a href="#recipes" class="popup__cta" data-recipe="10">смотреть рецепт</a>
                                 </div>
                             </template>
 
@@ -1080,7 +1103,7 @@
                                     <picture>
                                         <!-- Для мобильных устройств (до 480px) -->
                                         <source
-                                                media="(max-width: 769px)"
+                                                media="(max-width: 767px)"
                                                 srcset="assets/images/popap-16.1.png"
                                                 type="image/png">
 
@@ -1104,7 +1127,7 @@
                                             <div class="popup__stat-label">Пищевая ценность</div>
                                         </div>
                                     </div>
-                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                    <a href="#recipes" class="popup__cta" data-recipe="6">смотреть рецепт</a>
                                 </div>
                             </template>
 
@@ -1120,7 +1143,7 @@
                                     <picture>
                                         <!-- Для мобильных устройств (до 480px) -->
                                         <source
-                                                media="(max-width: 769px)"
+                                                media="(max-width: 767px)"
                                                 srcset="assets/images/popap-17.1.png"
                                                 type="image/png">
 
@@ -1144,7 +1167,7 @@
                                             <div class="popup__stat-label">Пищевая ценность</div>
                                         </div>
                                     </div>
-                                    <a href="#recipes" class="popup__cta">смотреть рецепт</a>
+                                    <a href="#recipes" class="popup__cta" data-recipe="5">смотреть рецепт</a>
                                 </div>
                             </template>
 
@@ -1458,7 +1481,11 @@
                                 <li>Лед - 150 г</li>
                             </ul>
                             <h3 class="drinks-slide__content-subtitle">Метод приготовления:</h3>
-                            <p class="drinks-slide__content-desc">В 100 мл горячей воды заварить чай жасминовый и
+                            <p class="drinks-slide__content-desc desktop">В 100 мл горячей воды заварить чай жасминовый и
+                                охладить его. Бокал наполнить льдом, добавить напиток Santal Красный виноград, лимонный
+                                фреш, охлажденный чай <br>и нарезанный пополам виноград. Украсить напиток листом
+                                бамбука. </p>
+                            <p class="drinks-slide__content-desc tablet">В 100 мл горячей воды заварить чай жасминовый и
                                 охладить его. Бокал наполнить льдом, добавить напиток Santal Красный виноград, лимонный
                                 фреш, охлажденный чай и нарезанный пополам виноград. Украсить напиток листом
                                 бамбука. </p>
@@ -1961,6 +1988,7 @@
 <script src="js/siesta-slider.js"></script>
 <script src="js/drinks-slider.js"></script>
 <script src="js/popup.js"></script>
+<script src="js/playlist.js"></script>
 <script src="js/burger.js"></script>
 
 </body>
